@@ -31,7 +31,7 @@
   <style type="text/css">
   
     #container.show {
-      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
+      background: linear-gradient(200deg,#ccc,#000);
     }
   </style>
   
@@ -87,7 +87,7 @@
                 
             
                 
-                <a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">个人简介</a>
+                <a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
                 
             
         </nav>
@@ -544,7 +544,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">个人简介</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -641,6 +641,20 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+      <div class="aboutme-wrap">
+    <div style="display:;">
+      <script type="text/javascript" src="https://api.lwl12.com/hitokoto/v1?encode=js&charset=utf-8"></script>
+      <p style="margin:0 20px 0 20px;">
+        <span id="lwlhitokoto">
+          <script>
+            lwlhitokoto();
+          </script>
+        </span>
+      </p>
+      <p id="js-aboutme" style="margin:0 20px 0 20px;">CS专业，本科就读于Harbin Institude of Technology,Shenzhen，希望自己能有一点成长，希望还有机会出去看看世界，如果哪怕能够给你带来一点点启发，也会让我很高兴！</P>
+    </div>
+  </div>
     
   </div>  
 </div>
