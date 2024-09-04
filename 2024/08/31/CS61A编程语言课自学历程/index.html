@@ -17,7 +17,7 @@
 <meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-08-31T12:31:52.000Z">
-<meta property="article:modified_time" content="2024-09-04T12:35:22.665Z">
+<meta property="article:modified_time" content="2024-09-04T12:39:38.316Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -215,19 +215,14 @@
 <blockquote>
 <p><strong>usages:</strong></p>
 </blockquote>
-<ol>
-<li><p><strong>Calculator</strong></p>
+<p>1.<strong>Calculator</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 2000 + 15</span><br><span class="line">2015</span><br><span class="line">&gt;&gt;&gt; 1 * 2 * ((3 * 4 * 5 // 6) ** 3) + 7 + 8</span><br><span class="line">2015</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>Call expressions</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; max (2 , 4)</span><br><span class="line">4</span><br><span class="line">&gt;&gt;&gt; min(-2, 50000)</span><br><span class="line">-2</span><br><span class="line">&gt;&gt;&gt; from operator import add,mul</span><br><span class="line">&gt;&gt;&gt; add(2 , 3)</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; mul(2 , 3)</span><br><span class="line">6</span><br><span class="line">&gt;&gt;&gt; max(1, 2, 3, 4, 5)</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; mul(add(2,mul(4, 6)),add(3, 5))</span><br><span class="line">208</span><br></pre></td></tr></table></figure></li>
-</ol>
+
+<p>2.<strong>Call expressions</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; max (2 , 4)</span><br><span class="line">4</span><br><span class="line">&gt;&gt;&gt; min(-2, 50000)</span><br><span class="line">-2</span><br><span class="line">&gt;&gt;&gt; from operator import add,mul</span><br><span class="line">&gt;&gt;&gt; add(2 , 3)</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; mul(2 , 3)</span><br><span class="line">6</span><br><span class="line">&gt;&gt;&gt; max(1, 2, 3, 4, 5)</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; mul(add(2,mul(4, 6)),add(3, 5))</span><br><span class="line">208</span><br></pre></td></tr></table></figure>
+
 <p>In call expressions,you don’t need to memorize the order of operations.</p>
-<ol start="3">
-<li><strong>Anatomy of a Call Expression</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add (2 , 3)</span><br><span class="line">add -- operator</span><br><span class="line">(2 , 3) -- operands -- separated by commas within parentheses</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<hr>
-<p>Now,you understand programming languages work is that they interpret your expressions by applying evaluation procedures.</p>
+<h2 id="3-Anatomy-of-a-Call-Expression"><a href="#3-Anatomy-of-a-Call-Expression" class="headerlink" title="3.Anatomy of a Call Expression"></a>3.<strong>Anatomy of a Call Expression</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">add (2 , 3)</span><br><span class="line">add -- operator</span><br><span class="line">(2 , 3) -- operands -- separated by commas within parentheses</span><br><span class="line"></span><br></pre></td></tr></table></figure></h2><p>Now,you understand programming languages work is that they interpret your expressions by applying evaluation procedures.</p>
 <ol>
 <li>Evaluate the operator and then the operand subexpressions</li>
 <li>Apply the function that is the value of the oprator subexpressions to the arguments that are the values of the operand subexpressions<br>(将作为运算符子表达式的函数应用于作为操作数子表达式的参数)</li>
@@ -242,22 +237,16 @@
 <p>在执行函数时，每个函数都会分配一个独立的栈帧，用于存储该函数的参数、局部变量、返回地址等信息。 栈帧的作用在于保存函数的运行环境，使得函数执行时可以随时访问其所需的参数和局部变量。 当函数被调用时，其栈帧被推入栈中，成为当前活动的栈帧。</p>
 <p>如果要深入了解栈帧的知识，还要深入学习数据结构这些内容，在此先不进行深入。但是对于此课程，我们还是需要了解一些基本概念：frame(通常翻译成框架或者帧)，还有父框架、全局框架、环境……</p>
 <p>以下是概念之间的一些关系：</p>
-<ol>
+<ul>
 <li>Every user-defined function has a parent frame(often global)</li>
-</ol>
-<p>每一个自定义函数都有一个父框架,经常是全局框架</p>
-<ol start="2">
+<li>每一个自定义函数都有一个父框架,经常是全局框架</li>
 <li>The parent of a function is the frame in which it was defined</li>
-</ol>
-<p>函数的父级是其定义或者创建时的框架</p>
-<ol start="3">
+<li>函数的父级是其定义或者创建时的框架</li>
 <li>Every local frame has a parent frame</li>
-</ol>
-<p>每个本地框架都有一个父框架</p>
-<ol start="4">
+<li>每个本地框架都有一个父框架</li>
 <li>An environment is a sequence of frames</li>
-</ol>
-<p>一个环境是一系列帧的序列</p>
+<li>一个环境是一系列帧的序列</li>
+</ul>
 <hr>
 <p>我们可以通过python tutor这些软件来进行环境图的绘制，帮助我们理解函数的逻辑，这个是可用的链接:<a target="_blank" rel="noopener" href="https://pythontutor.com/python-compiler.html#mode=edit">https://pythontutor.com/python-compiler.html#mode=edit</a></p>
 <p>在这个软件中定义和调用函数，观察环境图的生成，你会慢慢理解到一级一级框架所构建的环境，也会慢慢理解变量在各个环境中发生的作用，最终读懂代码的最终逻辑，如果目前你对环境、帧这些概念还是不够了解，也没关系，因为在之后的课程中你还会一次又一次深化这个概念。</p>
@@ -482,7 +471,7 @@ These things are out of sync.And that’s how assignment works.</li>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BD%91%E5%9D%80"><span class="toc-number">1.1.</span> <span class="toc-text">有用的一些网址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part1-Expression%E2%80%93%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">Part1: Expression–表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part2-enviroments%E2%80%93%E7%8E%AF%E5%A2%83"><span class="toc-number">1.4.</span> <span class="toc-text">Part2:enviroments–环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part3-function-%E2%80%93%E5%87%BD%E6%95%B0"><span class="toc-number">1.5.</span> <span class="toc-text">Part3:function –函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Name-Assignment-and-User-Defined-Functions"><span class="toc-number">1.5.1.</span> <span class="toc-text">Name, Assignment,and User-Defined Functions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-4"><span class="toc-number">1.6.</span> <span class="toc-text">Part 4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">1.7.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">1.8.</span> <span class="toc-text">有序列表</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BD%91%E5%9D%80"><span class="toc-number">1.1.</span> <span class="toc-text">有用的一些网址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part1-Expression%E2%80%93%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">Part1: Expression–表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Anatomy-of-a-Call-Expression"><span class="toc-number">1.4.</span> <span class="toc-text">3.Anatomy of a Call Expression1234add (2 , 3)add -- operator(2 , 3) -- operands -- separated by commas within parentheses</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part2-enviroments%E2%80%93%E7%8E%AF%E5%A2%83"><span class="toc-number">1.5.</span> <span class="toc-text">Part2:enviroments–环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part3-function-%E2%80%93%E5%87%BD%E6%95%B0"><span class="toc-number">1.6.</span> <span class="toc-text">Part3:function –函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Name-Assignment-and-User-Defined-Functions"><span class="toc-number">1.6.1.</span> <span class="toc-text">Name, Assignment,and User-Defined Functions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-4"><span class="toc-number">1.7.</span> <span class="toc-text">Part 4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">1.8.</span> <span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-number">1.9.</span> <span class="toc-text">有序列表</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
