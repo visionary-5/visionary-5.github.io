@@ -17,7 +17,7 @@
 <meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结 (2)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-05T07:57:32.000Z">
-<meta property="article:modified_time" content="2024-09-05T11:45:14.294Z">
+<meta property="article:modified_time" content="2024-09-05T13:19:36.814Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -268,7 +268,77 @@
 
 <p>这段代码的结构非常巧妙，通过递归实现了对数字的层叠和反向层叠的效果。</p>
 <hr>
-<h2 id="Part-8-Sequence–序列"><a href="#Part-8-Sequence–序列" class="headerlink" title="Part 8 Sequence–序列"></a>Part 8 Sequence–序列</h2>
+<h2 id="Part-8-Sequence–序列"><a href="#Part-8-Sequence–序列" class="headerlink" title="Part 8 Sequence–序列"></a>Part 8 Sequence–序列</h2><h3 id="list"><a href="#list" class="headerlink" title="list"></a><strong>list</strong></h3><p>为了使我们能够实现具体的数据抽象，Python 提供了一个名为 list 列表的复合结构，可以通过将表达式放在以逗号分隔的方括号内来构造。这样的表达式称为列表字面量。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; [10, 20]</span><br><span class="line">[10, 20]</span><br></pre></td></tr></table></figure>
+
+<p>可以通过两种方式访问 ​​ 列表元素。第一种方法是通过我们熟悉的多重赋值方法，它将列表解构为单个元素并将每个元素与不同的名称绑定。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; pair = [10, 20]</span><br><span class="line">&gt;&gt;&gt; pair</span><br><span class="line">[10, 20]</span><br><span class="line">&gt;&gt;&gt; x, y = pair</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; y</span><br><span class="line">20</span><br></pre></td></tr></table></figure>
+
+<p>Python 中的列表（以及大多数其他编程语言中的序列）是从 0 开始索引的，这意味着索引 0 选择第一个元素，索引 1 选择第二个元素，以此类推。对于这种索引约定的一种直觉是，索引表示元素距列表开头的偏移量。</p>
+<p>元素选择运算符的等效函数称为 getitem ，它也使用 0 索引位置从列表中选择元素。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from operator import getitem</span><br><span class="line">&gt;&gt;&gt; getitem(pair, 0)</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; getitem(pair, 1)</span><br><span class="line">20</span><br></pre></td></tr></table></figure>
+
+<p>列表的元素可以是任何东西，包括列表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; pairs = [[10, 20], [30, 40]]</span><br><span class="line">&gt;&gt;&gt; pairs[1]</span><br><span class="line">[30, 40]</span><br><span class="line">&gt;&gt;&gt; pairs[1][0]</span><br><span class="line">30</span><br></pre></td></tr></table></figure>
+
+<h3 id="Containers"><a href="#Containers" class="headerlink" title="Containers"></a><strong>Containers</strong></h3><blockquote>
+<p><strong>Definition:Built-in operators for testing whether an element in a compound value</strong></p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; digits = [1, 8, 2, 8]</span><br><span class="line">&gt;&gt;&gt; 1 in digits</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; 8 in digits</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; 5 not in digits</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; not(5 in digits)</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; [1, 8] in digits</span><br><span class="line">False</span><br><span class="line">&gt;&gt;&gt; [1, 2] in [3, [1, 2], 4]</span><br><span class="line">True</span><br></pre></td></tr></table></figure>
+
+<h3 id="For-Statements"><a href="#For-Statements" class="headerlink" title="For Statements"></a><strong>For Statements</strong></h3><p>迭代语句：在list列表中，我们可以用for…in…来遍历列表中的所有的元素，用来代替while语句，更加简洁高效。如果我们用while语句，还需要添加像index这样的检索变量，比较麻烦。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def count(s, value):</span><br><span class="line">    &quot;&quot;&quot;Count the number of times that value occurs in sequence S.</span><br><span class="line">    </span><br><span class="line">    &gt;&gt;&gt; count([1,2,1,2,1], 1)</span><br><span class="line">    3</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    total = 0</span><br><span class="line">    for element in s:</span><br><span class="line">        if element == value:</span><br><span class="line">        total += 1  </span><br><span class="line">    return total</span><br></pre></td></tr></table></figure>
+
+<p><strong>Syntax tips</strong>:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def &lt;name&gt; in &lt;expression&gt;:</span><br><span class="line">    &lt;suite&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Evaluate the header expression, which must yield an iterable value (a sequence)</li>
+<li>第一件事是评估标题表达式，这个表达式必须产生一个可迭代的值。</li>
+<li>For each element in that sequence, in order: Bind name to that element in the current frame and execute the suite</li>
+<li>对于序列中的每个元素，我们将把该名字绑定到当前帧中的元素上，然后执行该套件。</li>
+</ul>
+<h3 id="Sequence-Unpacking-in-For-Statements"><a href="#Sequence-Unpacking-in-For-Statements" class="headerlink" title="Sequence Unpacking in For Statements"></a>Sequence Unpacking in For Statements</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; pairs = [[1, 2], [2, 2], [3, 2], [4, 4]]</span><br><span class="line">&gt;&gt;&gt; same_count = 0</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; for x, y in pairs:</span><br><span class="line">        if x == y:</span><br><span class="line">            same_count = same_count + 1</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; same_count</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>In this case, x, y are the name for each element in a fixed-length sequence</p>
+<h3 id="Ranges"><a href="#Ranges" class="headerlink" title="Ranges"></a>Ranges</h3><blockquote>
+<p><strong>Definition: A range is a sequence of consecutive integers.</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Length: ending value - startting value</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Element selection: starting value + index</strong></p>
+</blockquote>
+<ul>
+<li>List constructor</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list(range(-2, 2))</span><br><span class="line">[-2, -1, 0, 1]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; list(range(4))&quot;&quot;&quot;Range with a 0 starting value&quot;&quot;&quot;</span><br><span class="line">[0, 1, 2 ,3]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def sum_below(n):</span><br><span class="line">    total = 0</span><br><span class="line">    for i in range(n):</span><br><span class="line">        total += i</span><br><span class="line">    return total</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="List-Comprehensions-–-列表推导"><a href="#List-Comprehensions-–-列表推导" class="headerlink" title="List Comprehensions – 列表推导"></a>List Comprehensions – 列表推导</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; odds = [1, 3, 5, 7, 9]</span><br><span class="line">&gt;&gt;&gt; [x+1 for x in odds]</span><br><span class="line">[2, 4, 6, 8, 10]</span><br><span class="line">&gt;&gt;&gt; [x for x in odds if 25 % x == 0]</span><br><span class="line">[1, 5]</span><br><span class="line">&gt;&gt;&gt; [x+1 for x in odds if 25 % x == 0]</span><br><span class="line">[2, 6]</span><br></pre></td></tr></table></figure>
+
+<p>比如我们可以写一个函数列举出一个数字的因数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def divisors(n):</span><br><span class="line">    return [1] + [x for x in range(2, n) if n%x == 0]</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Part-9-Containers"><a href="#Part-9-Containers" class="headerlink" title="Part 9 Containers"></a>Part 9 Containers</h2><h3 id="Box-and-Pointer-Notation–方框和指针表示法"><a href="#Box-and-Pointer-Notation–方框和指针表示法" class="headerlink" title="Box and Pointer Notation–方框和指针表示法"></a>Box and Pointer Notation–方框和指针表示法</h3><blockquote>
+<p>The Closure Property of Data Types–数据类型的闭包属性</p>
+</blockquote>
+<ul>
+<li>A method for combining data values satisfies the closure property if: The result of combination can itself be combined using the same method.</li>
+<li>如果组合数据值的方法满足这个封闭属性，那么组合的结果本身可以使用相同的方法再次组合。</li>
+<li>Closure is powerful becease it permits us to create hierarchical structures.</li>
+<li>封闭是强大的，因为它允许我们创建分层结构。</li>
+<li>Hierarchical structures are made up of parts, which themselves are made up of parts, and so on</li>
+<li>分层结构由部分组成，这些部分本身由由部分组成，依此类推。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nested_list = [[1, 2],[],[[3, False, None],[4,lambda: 5]]]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
       
       <!-- 增加版权声明 -->
 
@@ -454,7 +524,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-2"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (2)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-7-Recursion%E2%80%93%E9%80%92%E5%BD%92"><span class="toc-number">1.1.</span> <span class="toc-text">Part 7: Recursion–递归</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Self-Reference"><span class="toc-number">1.1.1.</span> <span class="toc-text">Self_Reference</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recursive-function"><span class="toc-number">1.1.2.</span> <span class="toc-text">Recursive_function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multural-recursion%E2%80%93%E7%9B%B8%E4%BA%92%E9%80%92%E5%BD%92"><span class="toc-number">1.1.3.</span> <span class="toc-text">Multural_recursion–相互递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Iteration-vs-Recursion%E2%80%93%E9%80%92%E5%BD%92or%E8%BF%AD%E4%BB%A3%EF%BC%9F"><span class="toc-number">1.1.4.</span> <span class="toc-text">Iteration_vs_Recursion–递归or迭代？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Recursive-Leap-of-Faith-Is-fact-implemented-corrctily-%E9%80%92%E5%BD%92%E7%9A%84%E4%BF%A1%E4%BB%B0%E4%B9%8B%E8%B7%83%EF%BC%8C%E6%8C%BA%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84"><span class="toc-number">1.1.5.</span> <span class="toc-text">The Recursive Leap of Faith: Is fact implemented corrctily(递归的信仰之跃，挺有意思的)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree-Recursion"><span class="toc-number">1.1.6.</span> <span class="toc-text">Tree Recursion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-partitions"><span class="toc-number">1.1.7.</span> <span class="toc-text">Counting_partitions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Improve-Fib"><span class="toc-number">1.1.8.</span> <span class="toc-text">Improve Fib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cascade-and-Inverse-cascade"><span class="toc-number">1.1.9.</span> <span class="toc-text">Cascade and Inverse_cascade</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-8-Sequence%E2%80%93%E5%BA%8F%E5%88%97"><span class="toc-number">1.2.</span> <span class="toc-text">Part 8 Sequence–序列</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-2"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (2)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-7-Recursion%E2%80%93%E9%80%92%E5%BD%92"><span class="toc-number">1.1.</span> <span class="toc-text">Part 7: Recursion–递归</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Self-Reference"><span class="toc-number">1.1.1.</span> <span class="toc-text">Self_Reference</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recursive-function"><span class="toc-number">1.1.2.</span> <span class="toc-text">Recursive_function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multural-recursion%E2%80%93%E7%9B%B8%E4%BA%92%E9%80%92%E5%BD%92"><span class="toc-number">1.1.3.</span> <span class="toc-text">Multural_recursion–相互递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Iteration-vs-Recursion%E2%80%93%E9%80%92%E5%BD%92or%E8%BF%AD%E4%BB%A3%EF%BC%9F"><span class="toc-number">1.1.4.</span> <span class="toc-text">Iteration_vs_Recursion–递归or迭代？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Recursive-Leap-of-Faith-Is-fact-implemented-corrctily-%E9%80%92%E5%BD%92%E7%9A%84%E4%BF%A1%E4%BB%B0%E4%B9%8B%E8%B7%83%EF%BC%8C%E6%8C%BA%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84"><span class="toc-number">1.1.5.</span> <span class="toc-text">The Recursive Leap of Faith: Is fact implemented corrctily(递归的信仰之跃，挺有意思的)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree-Recursion"><span class="toc-number">1.1.6.</span> <span class="toc-text">Tree Recursion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Counting-partitions"><span class="toc-number">1.1.7.</span> <span class="toc-text">Counting_partitions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Improve-Fib"><span class="toc-number">1.1.8.</span> <span class="toc-text">Improve Fib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cascade-and-Inverse-cascade"><span class="toc-number">1.1.9.</span> <span class="toc-text">Cascade and Inverse_cascade</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-8-Sequence%E2%80%93%E5%BA%8F%E5%88%97"><span class="toc-number">1.2.</span> <span class="toc-text">Part 8 Sequence–序列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#list"><span class="toc-number">1.2.1.</span> <span class="toc-text">list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Containers"><span class="toc-number">1.2.2.</span> <span class="toc-text">Containers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#For-Statements"><span class="toc-number">1.2.3.</span> <span class="toc-text">For Statements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sequence-Unpacking-in-For-Statements"><span class="toc-number">1.2.4.</span> <span class="toc-text">Sequence Unpacking in For Statements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ranges"><span class="toc-number">1.2.5.</span> <span class="toc-text">Ranges</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List-Comprehensions-%E2%80%93-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC"><span class="toc-number">1.2.6.</span> <span class="toc-text">List Comprehensions – 列表推导</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-9-Containers"><span class="toc-number">1.3.</span> <span class="toc-text">Part 9 Containers</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Box-and-Pointer-Notation%E2%80%93%E6%96%B9%E6%A1%86%E5%92%8C%E6%8C%87%E9%92%88%E8%A1%A8%E7%A4%BA%E6%B3%95"><span class="toc-number">1.3.1.</span> <span class="toc-text">Box and Pointer Notation–方框和指针表示法</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
