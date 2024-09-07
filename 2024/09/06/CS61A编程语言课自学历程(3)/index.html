@@ -17,7 +17,7 @@
 <meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结 (3)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-06T07:30:30.000Z">
-<meta property="article:modified_time" content="2024-09-06T07:31:26.837Z">
+<meta property="article:modified_time" content="2024-09-07T15:02:39.387Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -200,7 +200,139 @@
       
         <h1 id="UC-Berkeley-CS61a自学历程和学习总结-3"><a href="#UC-Berkeley-CS61a自学历程和学习总结-3" class="headerlink" title="UC Berkeley CS61a自学历程和学习总结 (3)"></a>UC Berkeley CS61a自学历程和学习总结 (3)</h1><span id="more"></span>
 <hr>
+<h2 id="part-10-Data"><a href="#part-10-Data" class="headerlink" title="part 10 Data"></a>part 10 Data</h2><h3 id="Data-abstraction"><a href="#Data-abstraction" class="headerlink" title="Data abstraction"></a><strong>Data abstraction</strong></h3><p>数据抽象的特征类似于函数抽象。当我们创建函数抽象时，函数如何实现的细节被隐藏了，而且特定的函数本身可以被任何具有相同行为的函数替换。换句话说，我们可以构造抽象来使函数的使用方式和函数的实现细节分离。与之相似，数据抽象是一种方法论，使我们将复合数据对象的使用细节与它的构造方式隔离。</p>
+<p>数据抽象的基本概念是构造操作抽象数据的程序。也就是说，我们的程序应该以一种方式来使用数据，对数据做出尽可能少的假设。同时，需要定义具体的数据表示，独立于使用数据的程序。我们系统中这两部分的接口是一系列函数，叫做选择器和构造器，它们基于具体表示实现了抽象数据。为了演示这个技巧，我们需要考虑如何设计一系列函数来操作有理数。</p>
+<p>数据抽象的关键基本思想在于，你可以通过它的行为来识别某种数据，而不一定是通过你如何构建它或者实现构造函数和选择器的方式</p>
+<p>数据抽象是一种方法论，函数通过其强制在数据的表示和使用之间建立一个抽象屏障。</p>
+<ul>
+<li><p>An abstract data type lets us manipulate compound objects as units</p>
+</li>
+<li><p>Isolate two parts of any program that uses data</p>
+<p>  1.How data are represented(as parts)</p>
+<p>  2.How data are manipulated(as units)</p>
+</li>
+</ul>
+<hr>
+<h3 id="Data-Representations"><a href="#Data-Representations" class="headerlink" title="Data Representations"></a><strong>Data Representations</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"># Rational arithmetic</span><br><span class="line">def add_rational(x, y):</span><br><span class="line">    &quot;&quot;&quot;Add rational numbers x and y.&quot;&quot;&quot;</span><br><span class="line">    nx, dx = numer(x), denom(x)</span><br><span class="line">    ny, dy = numer(y), denom(y)</span><br><span class="line">    return rational(nx * dy + ny * dx, dx * dy)</span><br><span class="line"></span><br><span class="line">def mul_rational(x, y):</span><br><span class="line">    &quot;&quot;&quot;Multiply rational numbers x and y.&quot;&quot;&quot;</span><br><span class="line">    return rational(numer(x) * numer(y), denom(x) * denom(y))</span><br><span class="line"></span><br><span class="line">def rational_are_equal(x, y):</span><br><span class="line">    &quot;&quot;&quot;Return whether rational numbers x and y are equal.&quot;&quot;&quot;</span><br><span class="line">    return numer(x) * denom(y) == numer(y) * denom(x)</span><br><span class="line"></span><br><span class="line">def print_rational(x):</span><br><span class="line">    &quot;&quot;&quot;Print rational x.&quot;&quot;&quot;</span><br><span class="line">    print(numer(x), &quot;/&quot;, denom(x))</span><br><span class="line"></span><br><span class="line"># Constructor and selectors</span><br><span class="line">def rational(n, d):</span><br><span class="line">    &quot;&quot;&quot;Construct a rational number x that presents n/d&quot;&quot;&quot;</span><br><span class="line">    def select(name):</span><br><span class="line">        if name = &#x27;n&#x27;:</span><br><span class="line">            return n</span><br><span class="line">        elif name = &#x27;d&#x27;:</span><br><span class="line">            return d</span><br><span class="line">    return select</span><br><span class="line"></span><br><span class="line">def numer(x):</span><br><span class="line">    &quot;&quot;&quot;Return the numerator of rational number x.&quot;&quot;&quot;</span><br><span class="line">    return x(&#x27;n&#x27;)</span><br><span class="line"></span><br><span class="line">def denom(x):</span><br><span class="line">    &quot;&quot;&quot;Return the denominator of rational number x.&quot;&quot;&quot;</span><br><span class="line">    return x(&#x27;d&#x27;)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; x, y = rational(1, 2), rational(3, 8)</span><br><span class="line">&gt;&gt;&gt; print_rational(mul_rational(x, y))</span><br><span class="line">3 / 16</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">&lt;function rational.&lt;locals&gt;.select at 0x10293e6a8&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
 
+<p>一开始就看到了这个示例，的确会很痛苦，本人第一次看的时候纯纯一头雾水，但是这个例子很好地讲述了数据封装的一些思想，我谈谈我一些粗浅的理解：</p>
+<p>这个代码是关于有理数算术的实现，通过数据抽象的方式，将有理数的操作封装了起来。</p>
+<p>首先看 rational(n, d) 这个函数，它是一个构造函数，用于创建有理数对象 n&#x2F;d。构造函数返回的是一个内部函数 select，而 select 是用来区分有理数的分子 n 和分母 d。rational(n, d) 返回一个函数 select，这个函数保存了 n（分子）和 d（分母），它通过传入 ‘n’ 或 ‘d’ 来分别获取分子和分母的值。这里的 select 函数隐藏了具体的分子和分母的存储方式，外界无法直接访问 n 和 d，只能通过选择器 numer 和 denom 来访问。</p>
+<p>numer 和 denom 函数是用来获取有理数的分子和分母的选择器：numer(x) 会调用 x(‘n’)，即调用 rational 返回的 select 函数来获取分子 n。<br>denom(x) 类似地会获取分母 d。它让我们可以通过 numer 和 denom 来访问有理数的组成部分，而不必关心 rational 内部是如何存储这些信息的。</p>
+<p>接下来，add_rational、mul_rational 和 rational_are_equal 是关于有理数的基本运算，它们都基于对分子和分母的操作，这个比较简单，但要记住返回值都要返回分子和分母的选择器。</p>
+<p>print_rational(x) 是一个简单的打印函数，用来显示有理数的格式。</p>
+<p>这个例子展示了数据抽象的关键思想：分离数据的表示和操作。通过 rational 函数创建有理数对象，隐藏了内部的实现细节（例如分子和分母的存储），而 numer 和 denom 这些选择器让我们可以在不关心细节的情况下操作有理数。这种抽象使得程序更加模块化，并且方便后续修改有理数的表示方式，而无需改变对它的操作。</p>
+<p> （总而言之我觉得这里是个难点了，我看视频看了好多遍）</p>
+<hr>
+<h3 id="Abstraction-Barriers"><a href="#Abstraction-Barriers" class="headerlink" title="Abstraction Barriers"></a><strong>Abstraction Barriers</strong></h3><p><strong>Implementation of lists</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parts of the program that…</th>
+<th>Treat rationals as…</th>
+<th>Using</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Use rational numbers to perform computation</td>
+<td>whole data values</td>
+<td>add_rationals, mul_rationals, rationals_are_equal, print_rational</td>
+</tr>
+<tr>
+<td>Create rational or implement rational operations</td>
+<td>numerators and denominators</td>
+<td>rational, numer, denom</td>
+</tr>
+<tr>
+<td>Implement selectors and constructor for rationals</td>
+<td>two-element lists</td>
+<td>list literals and element selection</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="Pairs"><a href="#Pairs" class="headerlink" title="Pairs"></a><strong>Pairs</strong></h3><blockquote>
+<p>A pair consists of two values that joined together, bundled together in such a way that you can treat them as a unit, as a whole, even though there are two pairs.</p>
+</blockquote>
+<blockquote>
+<p>Representing Pairs Using lists</p>
+</blockquote>
+<ul>
+<li>“Unpacking”a list</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pair = [1, 2]</span><br><span class="line">&gt;&gt;&gt; pair</span><br><span class="line">[1, 2]</span><br><span class="line">&gt;&gt;&gt; x, y = pair</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; y</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Element selection using the selection operator</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; pair[0]</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; pair[1]</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Element selection function</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from operator import getitem</span><br><span class="line">&gt;&gt;&gt; getitem(pair, 0)</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; getitem(pair, 1)</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Part-11-Trees"><a href="#Part-11-Trees" class="headerlink" title="Part 11: Trees"></a>Part 11: Trees</h2><blockquote>
+<p>Trees are an important data abstraction for representing hierarchical relationships</p>
+</blockquote>
+<p>树是表示层次关系的重要数据抽象</p>
+<ul>
+<li><p>Recursive description(wooden trees)</p>
+<ol>
+<li>A tree has a root label and a list of branches</li>
+<li>Each branch is a tree</li>
+<li>A tree with zero branches is called a leaf</li>
+</ol>
+</li>
+<li><p>Relatiove desciption(famliy trees)</p>
+<ol>
+<li>Each location in a tree is called a node</li>
+<li>Each node has a label that can be any value</li>
+<li>One node can be the parent&#x2F;child of another</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="Implementing-the-Tree-Abstraction"><a href="#Implementing-the-Tree-Abstraction" class="headerlink" title="Implementing the Tree Abstraction"></a>Implementing the Tree Abstraction</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># Trees</span><br><span class="line"></span><br><span class="line">def tree(label, branches=[]):</span><br><span class="line">    for branch in branches:</span><br><span class="line">        assert is_tree(branch), &#x27;branches must be trees&#x27;</span><br><span class="line">    return [label] + list(branches)</span><br><span class="line"></span><br><span class="line">def label(tree)：</span><br><span class="line">    return tree[0]</span><br><span class="line"></span><br><span class="line">def branches(tree)</span><br><span class="line">    return tree[1:]</span><br><span class="line"></span><br><span class="line">def is_tree:</span><br><span class="line">    if type(tree) != list or len(tree) &lt; 1:</span><br><span class="line">        return False</span><br><span class="line">    for branch in branches(tree):</span><br><span class="line">        if not is_tree(branch)</span><br><span class="line">            return False</span><br><span class="line">    return True</span><br><span class="line"></span><br><span class="line">def is_leaf(tree):</span><br><span class="line">    return not branches(tree)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Tree-Processing"><a href="#Tree-Processing" class="headerlink" title="Tree Processing"></a><strong>Tree Processing</strong></h3><blockquote>
+<p>Functions that take trees as input or return trees as output are often tree recursive themselves</p>
+</blockquote>
+<blockquote>
+<p>作为输入或者输出的函数通常本身是tree递归的。</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def fib_tree(n):</span><br><span class="line">    if n &lt;= 1:</span><br><span class="line">        return tree(n)</span><br><span class="line">    else:</span><br><span class="line">        left, right = fib_tree(n-2), fib_tree(n-1)</span><br><span class="line">        return tree(label(left) + label(right), [left, right])</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def count_leaves(t):</span><br><span class="line">    &quot;&quot;&quot;Count the leaves of tree T.&quot;&quot;&quot;</span><br><span class="line">    if is_leaf(t):</span><br><span class="line">        return 1</span><br><span class="line">    else:</span><br><span class="line">        return sum([count_leaves(b) for b in branches(t)])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Discussion-Question"><a href="#Discussion-Question" class="headerlink" title="Discussion Question"></a><strong>Discussion Question</strong></h3><blockquote>
+<p>Implement leaves, which returns a list of the leaf lables of a tree</p>
+</blockquote>
+<blockquote>
+<p>Hint: If you sum a list of lists, you get a list containing the elements of those lists</p>
+</blockquote>
+<p>ex: sum的特性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; sum([ [1], [2, 3], [4]], [])</span><br><span class="line">[1, 2, 3, 4]</span><br><span class="line">&gt;&gt;&gt; sum([ [1] ], [])</span><br><span class="line">[1]</span><br></pre></td></tr></table></figure>
+
+<p>实施部分：不包含树的根标签</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def leaves(tree):</span><br><span class="line">    &quot;&quot;&quot;Return a list containing the leaf lables of tree.&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; leaves(fib_tree(5))</span><br><span class="line">[1, 0, 1, 0, 1, 1, 0, 1]</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">    if is_leaf(tree):</span><br><span class="line">        return [label(tree)]</span><br><span class="line">    else:</span><br><span class="line">        return sum(leaves(b) for b in branches(tree), [])</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Creating-Trees"><a href="#Creating-Trees" class="headerlink" title="Creating Trees"></a><strong>Creating Trees</strong></h3><blockquote>
+<p>A function that creates a tree from another tree is typically also recursive</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def increment_leaves(t):</span><br><span class="line">    &quot;&quot;&quot;Return a tree like t but with leaf lables incremented.&quot;&quot;&quot;</span><br><span class="line">    if is_leaf(t):</span><br><span class="line">        return tree(label(t) + 1)</span><br><span class="line">    else:</span><br><span class="line">        bs = [increment_leaves(b) for b in branches(t)]</span><br><span class="line">        return tree(label(t), bs)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def increment(t):</span><br><span class="line">    &quot;&quot;&quot;Return a tree like t but with all labels incremented&quot;&quot;&quot;</span><br><span class="line">    return tree(label(t) + 1, [increment(b) for b in branches(t)])</span><br></pre></td></tr></table></figure>
+
+<p>这是一行代码，返回一棵树，其中我们已经递增了标签，并且递增了所有分支中的所有标签。</p>
+<blockquote>
+<p>关于树的内容就写到这里吧，这部分对我而言目前有点困难，浅尝辄止了属于是。</p>
+</blockquote>
+<hr>
+<h2 id="Part-12-Mutablity"><a href="#Part-12-Mutablity" class="headerlink" title="Part 12: Mutablity"></a>Part 12: Mutablity</h2>
       
       <!-- 增加版权声明 -->
 
@@ -386,7 +518,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (3)</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (3)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#part-10-Data"><span class="toc-number">1.1.</span> <span class="toc-text">part 10 Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-abstraction"><span class="toc-number">1.1.1.</span> <span class="toc-text">Data abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Representations"><span class="toc-number">1.1.2.</span> <span class="toc-text">Data Representations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstraction-Barriers"><span class="toc-number">1.1.3.</span> <span class="toc-text">Abstraction Barriers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pairs"><span class="toc-number">1.1.4.</span> <span class="toc-text">Pairs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-Trees"><span class="toc-number">1.2.</span> <span class="toc-text">Part 11: Trees</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementing-the-Tree-Abstraction"><span class="toc-number">1.2.1.</span> <span class="toc-text">Implementing the Tree Abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree-Processing"><span class="toc-number">1.2.2.</span> <span class="toc-text">Tree Processing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discussion-Question"><span class="toc-number">1.2.3.</span> <span class="toc-text">Discussion Question</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-Trees"><span class="toc-number">1.2.4.</span> <span class="toc-text">Creating Trees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Mutablity"><span class="toc-number">1.3.</span> <span class="toc-text">Part 12: Mutablity</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
