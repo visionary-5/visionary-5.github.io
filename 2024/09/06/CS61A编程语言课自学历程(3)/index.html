@@ -17,7 +17,7 @@
 <meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结 (3)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-06T07:30:30.000Z">
-<meta property="article:modified_time" content="2024-09-07T15:04:47.419Z">
+<meta property="article:modified_time" content="2024-09-08T05:23:24.673Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -332,7 +332,82 @@
 <p>关于树的内容就写到这里吧，这部分对我而言目前有点困难，浅尝辄止了属于是。</p>
 </blockquote>
 <hr>
-<h2 id="Part-12-Mutablity"><a href="#Part-12-Mutablity" class="headerlink" title="Part 12: Mutablity"></a>Part 12: Mutablity</h2>
+<h2 id="Part-12-Mutablity"><a href="#Part-12-Mutablity" class="headerlink" title="Part 12: Mutablity"></a>Part 12: Mutablity</h2><h3 id="object"><a href="#object" class="headerlink" title="object"></a><strong>object</strong></h3><ul>
+<li>Objects represent information</li>
+<li>They consist of data and behavior, bundled together to create abstractions</li>
+<li>Objects can represent things, but also properties, interactions, &amp; processes.</li>
+<li>A type of object is called a class; classes are first-class values in Python.</li>
+<li>Object-oriented programming:<ol>
+<li>A metaphor for organizing large programs</li>
+<li>Special syntax that can improve the composition of programs</li>
+</ol>
+</li>
+<li>In Pyhon, every value is an object<ol>
+<li>All objects have attributes</li>
+<li>A lot of data manipulation happens through object methods</li>
+<li>Functions do one thing; objects do many related things</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>ex: Strings:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = &#x27;Hello&#x27;</span><br><span class="line">&gt;&gt;&gt; s.upper()</span><br><span class="line">&#x27;HELLO&#x27;</span><br><span class="line">&gt;&gt;&gt; s.lower()</span><br><span class="line">&#x27;hello&#x27;</span><br><span class="line">&gt;&gt;&gt; s.swapcase()</span><br><span class="line">&#x27;hELLO&#x27;</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#x27;Hello&#x27;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>原课程中还讲到了一些编码的知识，如果ASCII码和Unicode，包括一些相关的编程语法，如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from unicodedata import name, lookup</span><br></pre></td></tr></table></figure>
+
+<p>在此省略</p>
+<hr>
+<h3 id="Mutation-Operations-–变异算子"><a href="#Mutation-Operations-–变异算子" class="headerlink" title="Mutation Operations –变异算子"></a><strong>Mutation Operations –变异算子</strong></h3><blockquote>
+<p>ex: 一个关于扑克牌的故事</p>
+</blockquote>
+<ul>
+<li>Some Object Can Change</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; suits = [&#x27;coin&#x27;, &#x27;string&#x27;, &#x27;myriad&#x27;]</span><br><span class="line">&gt;&gt;&gt; original_suits = suits</span><br><span class="line">&gt;&gt;&gt; suits.pop</span><br><span class="line">&lt;built-in method pop of list object at 0x000002501097D1C0&gt;</span><br><span class="line">&gt;&gt;&gt; suits.pop()</span><br><span class="line">&#x27;myriad&#x27;</span><br><span class="line">&gt;&gt;&gt; suits.remove(&#x27;string&#x27;)</span><br><span class="line">&gt;&gt;&gt; suits</span><br><span class="line">[&#x27;coin&#x27;]</span><br><span class="line">&gt;&gt;&gt; suits.append(&#x27;cup&#x27;)</span><br><span class="line">&gt;&gt;&gt; suits.extend([&#x27;sword&#x27;, &#x27;club&#x27;])</span><br><span class="line">&gt;&gt;&gt; suits</span><br><span class="line">[&#x27;coin&#x27;, &#x27;cup&#x27;, &#x27;sword&#x27;, &#x27;club&#x27;]</span><br><span class="line">&gt;&gt;&gt; suits[2] = &#x27;spade&#x27;</span><br><span class="line">&gt;&gt;&gt; suits[0:2] = [&#x27;heart&#x27;, &#x27;diamond&#x27;]</span><br><span class="line">&gt;&gt;&gt; suits</span><br><span class="line">[&#x27;heart&#x27;, &#x27;diamond&#x27;, &#x27;spade&#x27;, &#x27;club&#x27;]</span><br><span class="line">&gt;&gt;&gt; original_suits</span><br><span class="line">[&#x27;heart&#x27;, &#x27;diamond&#x27;, &#x27;spade&#x27;, &#x27;club&#x27;]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>This is the first example in the course of an object changing state</p>
+</li>
+<li><p>The same object can change in value throughout the course of computation</p>
+</li>
+<li><p>All name that refer to the same object are affected by a mutation</p>
+</li>
+<li><p>Only objects of mutable types can change: list &amp; dictionaries</p>
+</li>
+<li><p>ps: 在计算机科学中，变异是一个词，它在对象发生变化的时候使用</p>
+</li>
+</ul>
+<blockquote>
+<p>ex: dictionary</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; numerals = &#123;&#x27;I&#x27; : 1, &#x27;V&#x27; : 5, &#x27;X&#x27; : 10&#125;</span><br><span class="line">&gt;&gt;&gt; numerals</span><br><span class="line">&#123;&#x27;I&#x27;: 1, &#x27;V&#x27;: 5, &#x27;X&#x27;: 10&#125;</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;X&#x27;] </span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;X&#x27;] = 11</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;X&#x27;]      </span><br><span class="line">11</span><br><span class="line">&gt;&gt;&gt; numerals      </span><br><span class="line">&#123;&#x27;I&#x27;: 1, &#x27;V&#x27;: 5, &#x27;X&#x27;: 11&#125;</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;L&#x27;] = 50</span><br><span class="line">&gt;&gt;&gt; numerals      </span><br><span class="line">&#123;&#x27;I&#x27;: 1, &#x27;V&#x27;: 5, &#x27;X&#x27;: 11, &#x27;L&#x27;: 50&#125;</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;L&#x27;]      </span><br><span class="line">50</span><br><span class="line">&gt;&gt;&gt; numerals.pop(&#x27;X&#x27;)</span><br><span class="line">11</span><br><span class="line">&gt;&gt;&gt; numerals.get(&#x27;X&#x27;) </span><br><span class="line">&gt;&gt;&gt; numerals          </span><br><span class="line">&#123;&#x27;I&#x27;: 1, &#x27;V&#x27;: 5, &#x27;L&#x27;: 50&#125;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Mutation Can Happen Within a Function Call</p>
+</blockquote>
+<ul>
+<li>A function can change the value of any object in its scope</li>
+</ul>
+<hr>
+<h3 id="Tuples-–-元组"><a href="#Tuples-–-元组" class="headerlink" title="Tuples – 元组"></a><strong>Tuples – 元组</strong></h3><blockquote>
+<p>元组是序列，但它们是不可变的序列，意味着它们无法再被更改</p>
+</blockquote>
+<blockquote>
+<p>Immutable values are protected from mutation</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; turtle = (1, 2, 3)</span><br><span class="line">&gt;&gt;&gt; ooze() #Next lecture: ooze can change turtle&#x27;s binding</span><br><span class="line">&gt;&gt;&gt; turtle</span><br><span class="line">(1, 2, 3)</span><br></pre></td></tr></table></figure>
+
+<p>字符串，元组都是不可改变的值，唯一可变的值是列表</p>
+<hr>
+<h3 id="Mutable-Function"><a href="#Mutable-Function" class="headerlink" title="Mutable Function"></a><strong>Mutable Function</strong></h3><blockquote>
+<p>withdraw from bank</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def make_withdraw_list(balance):</span><br><span class="line">    b = [balance]</span><br><span class="line">    def withdraw(amount):</span><br><span class="line">        if amount &gt; b[0]</span><br><span class="line">            return &#x27;Insufficient funds&#x27;</span><br><span class="line">    b[0] = b[0] - amount</span><br><span class="line">    return b[0]</span><br><span class="line">return withdraw</span><br><span class="line"></span><br><span class="line">withdraw = make_withdraw_list(100)</span><br><span class="line">withdraw(25)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Part-13-Iterators"><a href="#Part-13-Iterators" class="headerlink" title="Part 13 Iterators"></a>Part 13 Iterators</h2>
       
       <!-- 增加版权声明 -->
 
@@ -518,7 +593,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (3)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-10-Data"><span class="toc-number">1.1.</span> <span class="toc-text">Part 10 Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-abstraction"><span class="toc-number">1.1.1.</span> <span class="toc-text">Data abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Representations"><span class="toc-number">1.1.2.</span> <span class="toc-text">Data Representations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstraction-Barriers"><span class="toc-number">1.1.3.</span> <span class="toc-text">Abstraction Barriers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pairs"><span class="toc-number">1.1.4.</span> <span class="toc-text">Pairs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-Trees"><span class="toc-number">1.2.</span> <span class="toc-text">Part 11: Trees</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementing-the-Tree-Abstraction"><span class="toc-number">1.2.1.</span> <span class="toc-text">Implementing the Tree Abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree-Processing"><span class="toc-number">1.2.2.</span> <span class="toc-text">Tree Processing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discussion-Question"><span class="toc-number">1.2.3.</span> <span class="toc-text">Discussion Question</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-Trees"><span class="toc-number">1.2.4.</span> <span class="toc-text">Creating Trees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Mutablity"><span class="toc-number">1.3.</span> <span class="toc-text">Part 12: Mutablity</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (3)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-10-Data"><span class="toc-number">1.1.</span> <span class="toc-text">Part 10 Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-abstraction"><span class="toc-number">1.1.1.</span> <span class="toc-text">Data abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Representations"><span class="toc-number">1.1.2.</span> <span class="toc-text">Data Representations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstraction-Barriers"><span class="toc-number">1.1.3.</span> <span class="toc-text">Abstraction Barriers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pairs"><span class="toc-number">1.1.4.</span> <span class="toc-text">Pairs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-Trees"><span class="toc-number">1.2.</span> <span class="toc-text">Part 11: Trees</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementing-the-Tree-Abstraction"><span class="toc-number">1.2.1.</span> <span class="toc-text">Implementing the Tree Abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree-Processing"><span class="toc-number">1.2.2.</span> <span class="toc-text">Tree Processing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discussion-Question"><span class="toc-number">1.2.3.</span> <span class="toc-text">Discussion Question</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-Trees"><span class="toc-number">1.2.4.</span> <span class="toc-text">Creating Trees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Mutablity"><span class="toc-number">1.3.</span> <span class="toc-text">Part 12: Mutablity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#object"><span class="toc-number">1.3.1.</span> <span class="toc-text">object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutation-Operations-%E2%80%93%E5%8F%98%E5%BC%82%E7%AE%97%E5%AD%90"><span class="toc-number">1.3.2.</span> <span class="toc-text">Mutation Operations –变异算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tuples-%E2%80%93-%E5%85%83%E7%BB%84"><span class="toc-number">1.3.3.</span> <span class="toc-text">Tuples – 元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutable-Function"><span class="toc-number">1.3.4.</span> <span class="toc-text">Mutable Function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-13-Iterators"><span class="toc-number">1.4.</span> <span class="toc-text">Part 13 Iterators</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
