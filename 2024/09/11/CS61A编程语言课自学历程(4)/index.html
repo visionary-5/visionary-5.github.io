@@ -7,17 +7,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.visionary-5.top">
-  <title>CS61a编程语言课自学历程————UC Berkeley(3) | Arua&#39;s blog</title>
+  <title>CS61a编程语言课自学历程————UC Berkeley(4) | Arua&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="UC Berkeley CS61a自学历程和学习总结 (3)">
+  <meta name="description" content="UC Berkeley CS61a自学历程和学习总结 (4)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CS61a编程语言课自学历程————UC Berkeley(3)">
-<meta property="og:url" content="https://blog.visionary-5.top/2024/09/06/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(3)/index.html">
+<meta property="og:title" content="CS61a编程语言课自学历程————UC Berkeley(4)">
+<meta property="og:url" content="https://blog.visionary-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/index.html">
 <meta property="og:site_name" content="Arua&#39;s blog">
-<meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结 (3)">
+<meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结 (4)">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-09-06T07:30:30.000Z">
-<meta property="article:modified_time" content="2024-09-11T12:23:34.596Z">
+<meta property="article:published_time" content="2024-09-11T11:30:30.000Z">
+<meta property="article:modified_time" content="2024-09-11T12:23:31.133Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -166,14 +166,14 @@
   <font color="7D26CD">置顶</font>
   <span class="post-meta-divider">|</span>
 
-<article id="post-CS61A编程语言课自学历程(3)" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-CS61A编程语言课自学历程(4)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         <!--
   
     <h1 class="article-title" itemprop="name">
-      CS61a编程语言课自学历程————UC Berkeley(3)
+      CS61a编程语言课自学历程————UC Berkeley(4)
     </h1>
   
 -->
@@ -191,400 +191,64 @@
     
 
     
-      <a href="/2024/09/06/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(3)/" class="archive-article-date">
-  	<time datetime="2024-09-06T07:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-06</time>
+      <a href="/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" class="archive-article-date">
+  	<time datetime="2024-09-11T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-11</time>
 </a>
     
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="UC-Berkeley-CS61a自学历程和学习总结-3"><a href="#UC-Berkeley-CS61a自学历程和学习总结-3" class="headerlink" title="UC Berkeley CS61a自学历程和学习总结 (3)"></a>UC Berkeley CS61a自学历程和学习总结 (3)</h1><span id="more"></span>
+        <h1 id="UC-Berkeley-CS61a自学历程和学习总结-4"><a href="#UC-Berkeley-CS61a自学历程和学习总结-4" class="headerlink" title="UC Berkeley CS61a自学历程和学习总结 (4)"></a>UC Berkeley CS61a自学历程和学习总结 (4)</h1><span id="more"></span>
 <hr>
-<h2 id="Part-10-Data"><a href="#Part-10-Data" class="headerlink" title="Part 10 Data"></a>Part 10 Data</h2><h3 id="Data-abstraction"><a href="#Data-abstraction" class="headerlink" title="Data abstraction"></a><strong>Data abstraction</strong></h3><p>数据抽象的特征类似于函数抽象。当我们创建函数抽象时，函数如何实现的细节被隐藏了，而且特定的函数本身可以被任何具有相同行为的函数替换。换句话说，我们可以构造抽象来使函数的使用方式和函数的实现细节分离。与之相似，数据抽象是一种方法论，使我们将复合数据对象的使用细节与它的构造方式隔离。</p>
-<p>数据抽象的基本概念是构造操作抽象数据的程序。也就是说，我们的程序应该以一种方式来使用数据，对数据做出尽可能少的假设。同时，需要定义具体的数据表示，独立于使用数据的程序。我们系统中这两部分的接口是一系列函数，叫做选择器和构造器，它们基于具体表示实现了抽象数据。为了演示这个技巧，我们需要考虑如何设计一系列函数来操作有理数。</p>
-<p>数据抽象的关键基本思想在于，你可以通过它的行为来识别某种数据，而不一定是通过你如何构建它或者实现构造函数和选择器的方式</p>
-<p>数据抽象是一种方法论，函数通过其强制在数据的表示和使用之间建立一个抽象屏障。</p>
-<ul>
-<li><p>An abstract data type lets us manipulate compound objects as units</p>
-</li>
-<li><p>Isolate two parts of any program that uses data</p>
-<p>  1.How data are represented(as parts)</p>
-<p>  2.How data are manipulated(as units)</p>
-</li>
-</ul>
-<hr>
-<h3 id="Data-Representations"><a href="#Data-Representations" class="headerlink" title="Data Representations"></a><strong>Data Representations</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"># Rational arithmetic</span><br><span class="line">def add_rational(x, y):</span><br><span class="line">    &quot;&quot;&quot;Add rational numbers x and y.&quot;&quot;&quot;</span><br><span class="line">    nx, dx = numer(x), denom(x)</span><br><span class="line">    ny, dy = numer(y), denom(y)</span><br><span class="line">    return rational(nx * dy + ny * dx, dx * dy)</span><br><span class="line"></span><br><span class="line">def mul_rational(x, y):</span><br><span class="line">    &quot;&quot;&quot;Multiply rational numbers x and y.&quot;&quot;&quot;</span><br><span class="line">    return rational(numer(x) * numer(y), denom(x) * denom(y))</span><br><span class="line"></span><br><span class="line">def rational_are_equal(x, y):</span><br><span class="line">    &quot;&quot;&quot;Return whether rational numbers x and y are equal.&quot;&quot;&quot;</span><br><span class="line">    return numer(x) * denom(y) == numer(y) * denom(x)</span><br><span class="line"></span><br><span class="line">def print_rational(x):</span><br><span class="line">    &quot;&quot;&quot;Print rational x.&quot;&quot;&quot;</span><br><span class="line">    print(numer(x), &quot;/&quot;, denom(x))</span><br><span class="line"></span><br><span class="line"># Constructor and selectors</span><br><span class="line">def rational(n, d):</span><br><span class="line">    &quot;&quot;&quot;Construct a rational number x that presents n/d&quot;&quot;&quot;</span><br><span class="line">    def select(name):</span><br><span class="line">        if name = &#x27;n&#x27;:</span><br><span class="line">            return n</span><br><span class="line">        elif name = &#x27;d&#x27;:</span><br><span class="line">            return d</span><br><span class="line">    return select</span><br><span class="line"></span><br><span class="line">def numer(x):</span><br><span class="line">    &quot;&quot;&quot;Return the numerator of rational number x.&quot;&quot;&quot;</span><br><span class="line">    return x(&#x27;n&#x27;)</span><br><span class="line"></span><br><span class="line">def denom(x):</span><br><span class="line">    &quot;&quot;&quot;Return the denominator of rational number x.&quot;&quot;&quot;</span><br><span class="line">    return x(&#x27;d&#x27;)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; x, y = rational(1, 2), rational(3, 8)</span><br><span class="line">&gt;&gt;&gt; print_rational(mul_rational(x, y))</span><br><span class="line">3 / 16</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">&lt;function rational.&lt;locals&gt;.select at 0x10293e6a8&gt;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>一开始就看到了这个示例，的确会很痛苦，本人第一次看的时候纯纯一头雾水，但是这个例子很好地讲述了数据封装的一些思想，我谈谈我一些粗浅的理解：</p>
-<p>这个代码是关于有理数算术的实现，通过数据抽象的方式，将有理数的操作封装了起来。</p>
-<p>首先看 rational(n, d) 这个函数，它是一个构造函数，用于创建有理数对象 n&#x2F;d。构造函数返回的是一个内部函数 select，而 select 是用来区分有理数的分子 n 和分母 d。rational(n, d) 返回一个函数 select，这个函数保存了 n（分子）和 d（分母），它通过传入 ‘n’ 或 ‘d’ 来分别获取分子和分母的值。这里的 select 函数隐藏了具体的分子和分母的存储方式，外界无法直接访问 n 和 d，只能通过选择器 numer 和 denom 来访问。</p>
-<p>numer 和 denom 函数是用来获取有理数的分子和分母的选择器：numer(x) 会调用 x(‘n’)，即调用 rational 返回的 select 函数来获取分子 n。<br>denom(x) 类似地会获取分母 d。它让我们可以通过 numer 和 denom 来访问有理数的组成部分，而不必关心 rational 内部是如何存储这些信息的。</p>
-<p>接下来，add_rational、mul_rational 和 rational_are_equal 是关于有理数的基本运算，它们都基于对分子和分母的操作，这个比较简单，但要记住返回值都要返回分子和分母的选择器。</p>
-<p>print_rational(x) 是一个简单的打印函数，用来显示有理数的格式。</p>
-<p>这个例子展示了数据抽象的关键思想：分离数据的表示和操作。通过 rational 函数创建有理数对象，隐藏了内部的实现细节（例如分子和分母的存储），而 numer 和 denom 这些选择器让我们可以在不关心细节的情况下操作有理数。这种抽象使得程序更加模块化，并且方便后续修改有理数的表示方式，而无需改变对它的操作。</p>
-<p> （总而言之我觉得这里是个难点了，我看视频看了好多遍）</p>
-<hr>
-<h3 id="Abstraction-Barriers"><a href="#Abstraction-Barriers" class="headerlink" title="Abstraction Barriers"></a><strong>Abstraction Barriers</strong></h3><p><strong>Implementation of lists</strong></p>
-<table>
-<thead>
-<tr>
-<th>Parts of the program that…</th>
-<th>Treat rationals as…</th>
-<th>Using</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Use rational numbers to perform computation</td>
-<td>whole data values</td>
-<td>add_rationals, mul_rationals, rationals_are_equal, print_rational</td>
-</tr>
-<tr>
-<td>Create rational or implement rational operations</td>
-<td>numerators and denominators</td>
-<td>rational, numer, denom</td>
-</tr>
-<tr>
-<td>Implement selectors and constructor for rationals</td>
-<td>two-element lists</td>
-<td>list literals and element selection</td>
-</tr>
-</tbody></table>
-<hr>
-<h3 id="Pairs"><a href="#Pairs" class="headerlink" title="Pairs"></a><strong>Pairs</strong></h3><blockquote>
-<p>A pair consists of two values that joined together, bundled together in such a way that you can treat them as a unit, as a whole, even though there are two pairs.</p>
+<h2 id="Part-15-Inheritance-–继承"><a href="#Part-15-Inheritance-–继承" class="headerlink" title="Part 15: Inheritance –继承"></a>Part 15: Inheritance –继承</h2><blockquote>
+<p>Inheritance is a method for relating classes together</p>
 </blockquote>
 <blockquote>
-<p>Representing Pairs Using lists</p>
+<p>继承是将多个类关联到一起的一种方法，因为并非每个类都孤立地存在。</p>
 </blockquote>
 <ul>
-<li>“Unpacking”a list</li>
+<li>A common use: Two similar classes differ in their degree of specialization.</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">pair = [1, 2]</span><br><span class="line">&gt;&gt;&gt; pair</span><br><span class="line">[1, 2]</span><br><span class="line">&gt;&gt;&gt; x, y = pair</span><br><span class="line">&gt;&gt;&gt; x</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; y</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class &lt;name&gt;(&lt;base class&gt;):</span><br><span class="line">    &lt;suite&gt;</span><br></pre></td></tr></table></figure>
 
+<p>从概念上来讲，通过这个类语句创建的子类与其基类共享所有属性，子类可能会覆盖某些继承的属性，以稍微更改其行为，但未更改的然后内容均保持不变。使用继承时，当我们编写现有类的子类时，我们只需指定这个子类与基类有何不同。</p>
+<p>举一个支票和银行账户的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class CheckingAccount(Account):</span><br><span class="line">    &quot;&quot;&quot;A bank account that charges for withdrawals&quot;&quot;&quot;</span><br><span class="line">    withdraw_fee = 1</span><br><span class="line">    interest = 0.01</span><br><span class="line">    def withdraw(self, amount):</span><br><span class="line">        return Account.withdraw(self, amount + self.withraw_fee)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Looking Up Attribute Names on Classes</p>
+</blockquote>
 <ul>
-<li>Element selection using the selection operator</li>
+<li>Base class attributes aren’t copied into subclasses!</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; pair[0]</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; pair[1]</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
+<p>To look up a name in a class:</p>
 <ul>
-<li>Element selection function</li>
+<li>If it names an attribute in the class, return the attribute value</li>
+<li>Otherwise, look up the name in the base class, if there is one.</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from operator import getitem</span><br><span class="line">&gt;&gt;&gt; getitem(pair, 0)</span><br><span class="line">1</span><br><span class="line">&gt;&gt;&gt; getitem(pair, 1)</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-
 <hr>
-<h2 id="Part-11-Trees"><a href="#Part-11-Trees" class="headerlink" title="Part 11: Trees"></a>Part 11: Trees</h2><blockquote>
-<p>Trees are an important data abstraction for representing hierarchical relationships</p>
+<h3 id="Object-Oriented-Design"><a href="#Object-Oriented-Design" class="headerlink" title="Object-Oriented Design"></a><strong>Object-Oriented Design</strong></h3><blockquote>
+<p>Designing for Inheritance</p>
 </blockquote>
-<p>树是表示层次关系的重要数据抽象</p>
 <ul>
-<li><p>Recursive description(wooden trees)</p>
-<ol>
-<li>A tree has a root label and a list of branches</li>
-<li>Each branch is a tree</li>
-<li>A tree with zero branches is called a leaf</li>
-</ol>
+<li>Don’t repeat yourself; use existing implementations</li>
+<li>Attributes that have been overridden are still accessible via class objects</li>
+<li>Look up attributes on instances whenever possible</li>
+</ul>
+<blockquote>
+<p>Inheritance and Composition</p>
+</blockquote>
+<ul>
+<li><p>Object-oriented programming shines when we adopt the metaphor<br>(That is, we treat objects like real things in the world.)</p>
 </li>
-<li><p>Relatiove desciption(famliy trees)</p>
-<ol>
-<li>Each location in a tree is called a node</li>
-<li>Each node has a label that can be any value</li>
-<li>One node can be the parent&#x2F;child of another</li>
-</ol>
+<li><p>Inheritance is best for representing <strong>is-a</strong> relationships.</p>
+</li>
+<li><p>Composition is best for representing has-a relationships.</p>
 </li>
 </ul>
-<hr>
-<h3 id="Implementing-the-Tree-Abstraction"><a href="#Implementing-the-Tree-Abstraction" class="headerlink" title="Implementing the Tree Abstraction"></a>Implementing the Tree Abstraction</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># Trees</span><br><span class="line"></span><br><span class="line">def tree(label, branches=[]):</span><br><span class="line">    for branch in branches:</span><br><span class="line">        assert is_tree(branch), &#x27;branches must be trees&#x27;</span><br><span class="line">    return [label] + list(branches)</span><br><span class="line"></span><br><span class="line">def label(tree)：</span><br><span class="line">    return tree[0]</span><br><span class="line"></span><br><span class="line">def branches(tree)</span><br><span class="line">    return tree[1:]</span><br><span class="line"></span><br><span class="line">def is_tree:</span><br><span class="line">    if type(tree) != list or len(tree) &lt; 1:</span><br><span class="line">        return False</span><br><span class="line">    for branch in branches(tree):</span><br><span class="line">        if not is_tree(branch)</span><br><span class="line">            return False</span><br><span class="line">    return True</span><br><span class="line"></span><br><span class="line">def is_leaf(tree):</span><br><span class="line">    return not branches(tree)</span><br></pre></td></tr></table></figure>
+<p>让我们快速搭建一个银行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">class Account:</span><br><span class="line">    def __init__(self, account_holder):</span><br><span class="line">        self.balance = 0</span><br><span class="line">        self.holder = account_holder</span><br><span class="line"></span><br><span class="line">    def deposit(self, amount):</span><br><span class="line">        self.balance = self.balance + amount</span><br><span class="line">        return self.balance</span><br><span class="line"></span><br><span class="line">    def withdraw(self, amount):</span><br><span class="line">        if amount &gt; self.balance:</span><br><span class="line">            return &#x27;Insufficient funds&#x27;</span><br><span class="line">        self.balance = self.balance - amount</span><br><span class="line">        return self.balance</span><br><span class="line"></span><br><span class="line">class CheckingAccount(Account):</span><br><span class="line">    &quot;&quot;&quot;A bank account that charges for withdrawals&quot;&quot;&quot;</span><br><span class="line">    withdraw_fee = 1</span><br><span class="line">    interest = 0.01</span><br><span class="line">    def withdraw(self, amount):</span><br><span class="line">        return Account.withdraw(self, amount + self.withraw_fee)</span><br><span class="line"></span><br><span class="line">class Bank():</span><br><span class="line">    &quot;&quot;&quot;A bank has accounts.</span><br><span class="line">    &gt;&gt;&gt; bank = Bank()</span><br><span class="line">    &gt;&gt;&gt; johh = bank.open_account(&#x27;John&#x27;, 10)</span><br><span class="line">    &gt;&gt;&gt; jack = bank.open_account(&#x27;Jack&#x27;, 5, CheckingAccount)</span><br><span class="line">    &gt;&gt;&gt; john.interest</span><br><span class="line">    0.02</span><br><span class="line">    &gt;&gt;&gt; jack.interest</span><br><span class="line">    0.01</span><br><span class="line">    &gt;&gt;&gt; bank.pay_interest()</span><br><span class="line">    &gt;&gt;&gt; john.balance</span><br><span class="line">    10.2</span><br><span class="line">    &gt;&gt;&gt; bank.too_big_to_fail()</span><br><span class="line">    True</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.accounts = []</span><br><span class="line">    </span><br><span class="line">    def open_account(self, holder, amount, kind = Account):</span><br><span class="line">        account = kind(holder)</span><br><span class="line">        account.deposit(amount)</span><br><span class="line">        self.accounts.append(account)</span><br><span class="line">        return account</span><br><span class="line"></span><br><span class="line">    def pay_interest(self)</span><br><span class="line">        for a in self.accounts:</span><br><span class="line">            a.deposit(a.balance * a.interest)</span><br><span class="line"></span><br><span class="line">    def too_big_to_fail(self):</span><br><span class="line">        return len(self.accounts) &gt; 1</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h3 id="Tree-Processing"><a href="#Tree-Processing" class="headerlink" title="Tree Processing"></a><strong>Tree Processing</strong></h3><blockquote>
-<p>Functions that take trees as input or return trees as output are often tree recursive themselves</p>
-</blockquote>
-<blockquote>
-<p>作为输入或者输出的函数通常本身是tree递归的。</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def fib_tree(n):</span><br><span class="line">    if n &lt;= 1:</span><br><span class="line">        return tree(n)</span><br><span class="line">    else:</span><br><span class="line">        left, right = fib_tree(n-2), fib_tree(n-1)</span><br><span class="line">        return tree(label(left) + label(right), [left, right])</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def count_leaves(t):</span><br><span class="line">    &quot;&quot;&quot;Count the leaves of tree T.&quot;&quot;&quot;</span><br><span class="line">    if is_leaf(t):</span><br><span class="line">        return 1</span><br><span class="line">    else:</span><br><span class="line">        return sum([count_leaves(b) for b in branches(t)])</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="Discussion-Question"><a href="#Discussion-Question" class="headerlink" title="Discussion Question"></a><strong>Discussion Question</strong></h3><blockquote>
-<p>Implement leaves, which returns a list of the leaf lables of a tree</p>
-</blockquote>
-<blockquote>
-<p>Hint: If you sum a list of lists, you get a list containing the elements of those lists</p>
-</blockquote>
-<p>ex: sum的特性</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; sum([ [1], [2, 3], [4]], [])</span><br><span class="line">[1, 2, 3, 4]</span><br><span class="line">&gt;&gt;&gt; sum([ [1] ], [])</span><br><span class="line">[1]</span><br></pre></td></tr></table></figure>
-
-<p>实施部分：不包含树的根标签</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def leaves(tree):</span><br><span class="line">    &quot;&quot;&quot;Return a list containing the leaf lables of tree.&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; leaves(fib_tree(5))</span><br><span class="line">[1, 0, 1, 0, 1, 1, 0, 1]</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">    if is_leaf(tree):</span><br><span class="line">        return [label(tree)]</span><br><span class="line">    else:</span><br><span class="line">        return sum(leaves(b) for b in branches(tree), [])</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="Creating-Trees"><a href="#Creating-Trees" class="headerlink" title="Creating Trees"></a><strong>Creating Trees</strong></h3><blockquote>
-<p>A function that creates a tree from another tree is typically also recursive</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def increment_leaves(t):</span><br><span class="line">    &quot;&quot;&quot;Return a tree like t but with leaf lables incremented.&quot;&quot;&quot;</span><br><span class="line">    if is_leaf(t):</span><br><span class="line">        return tree(label(t) + 1)</span><br><span class="line">    else:</span><br><span class="line">        bs = [increment_leaves(b) for b in branches(t)]</span><br><span class="line">        return tree(label(t), bs)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def increment(t):</span><br><span class="line">    &quot;&quot;&quot;Return a tree like t but with all labels incremented&quot;&quot;&quot;</span><br><span class="line">    return tree(label(t) + 1, [increment(b) for b in branches(t)])</span><br></pre></td></tr></table></figure>
-
-<p>这是一行代码，返回一棵树，其中我们已经递增了标签，并且递增了所有分支中的所有标签。</p>
-<blockquote>
-<p>关于树的内容就写到这里吧，这部分对我而言目前有点困难，浅尝辄止了属于是。</p>
-</blockquote>
-<hr>
-<h2 id="Part-12-Mutablity"><a href="#Part-12-Mutablity" class="headerlink" title="Part 12: Mutablity"></a>Part 12: Mutablity</h2><h3 id="object"><a href="#object" class="headerlink" title="object"></a><strong>object</strong></h3><ul>
-<li>Objects represent information</li>
-<li>They consist of data and behavior, bundled together to create abstractions</li>
-<li>Objects can represent things, but also properties, interactions, &amp; processes.</li>
-<li>A type of object is called a class; classes are first-class values in Python.</li>
-<li>Object-oriented programming:<ol>
-<li>A metaphor for organizing large programs</li>
-<li>Special syntax that can improve the composition of programs</li>
-</ol>
-</li>
-<li>In Pyhon, every value is an object<ol>
-<li>All objects have attributes</li>
-<li>A lot of data manipulation happens through object methods</li>
-<li>Functions do one thing; objects do many related things</li>
-</ol>
-</li>
-</ul>
-<blockquote>
-<p>ex: Strings:</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = &#x27;Hello&#x27;</span><br><span class="line">&gt;&gt;&gt; s.upper()</span><br><span class="line">&#x27;HELLO&#x27;</span><br><span class="line">&gt;&gt;&gt; s.lower()</span><br><span class="line">&#x27;hello&#x27;</span><br><span class="line">&gt;&gt;&gt; s.swapcase()</span><br><span class="line">&#x27;hELLO&#x27;</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">&#x27;Hello&#x27;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>原课程中还讲到了一些编码的知识，如果ASCII码和Unicode，包括一些相关的编程语法，如</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from unicodedata import name, lookup</span><br></pre></td></tr></table></figure>
-
-<p>在此省略</p>
-<hr>
-<h3 id="Mutation-Operations-–变异算子"><a href="#Mutation-Operations-–变异算子" class="headerlink" title="Mutation Operations –变异算子"></a><strong>Mutation Operations –变异算子</strong></h3><blockquote>
-<p>ex: 一个关于扑克牌的故事</p>
-</blockquote>
-<ul>
-<li>Some Object Can Change</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; suits = [&#x27;coin&#x27;, &#x27;string&#x27;, &#x27;myriad&#x27;]</span><br><span class="line">&gt;&gt;&gt; original_suits = suits</span><br><span class="line">&gt;&gt;&gt; suits.pop</span><br><span class="line">&lt;built-in method pop of list object at 0x000002501097D1C0&gt;</span><br><span class="line">&gt;&gt;&gt; suits.pop()</span><br><span class="line">&#x27;myriad&#x27;</span><br><span class="line">&gt;&gt;&gt; suits.remove(&#x27;string&#x27;)</span><br><span class="line">&gt;&gt;&gt; suits</span><br><span class="line">[&#x27;coin&#x27;]</span><br><span class="line">&gt;&gt;&gt; suits.append(&#x27;cup&#x27;)</span><br><span class="line">&gt;&gt;&gt; suits.extend([&#x27;sword&#x27;, &#x27;club&#x27;])</span><br><span class="line">&gt;&gt;&gt; suits</span><br><span class="line">[&#x27;coin&#x27;, &#x27;cup&#x27;, &#x27;sword&#x27;, &#x27;club&#x27;]</span><br><span class="line">&gt;&gt;&gt; suits[2] = &#x27;spade&#x27;</span><br><span class="line">&gt;&gt;&gt; suits[0:2] = [&#x27;heart&#x27;, &#x27;diamond&#x27;]</span><br><span class="line">&gt;&gt;&gt; suits</span><br><span class="line">[&#x27;heart&#x27;, &#x27;diamond&#x27;, &#x27;spade&#x27;, &#x27;club&#x27;]</span><br><span class="line">&gt;&gt;&gt; original_suits</span><br><span class="line">[&#x27;heart&#x27;, &#x27;diamond&#x27;, &#x27;spade&#x27;, &#x27;club&#x27;]</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>This is the first example in the course of an object changing state</p>
-</li>
-<li><p>The same object can change in value throughout the course of computation</p>
-</li>
-<li><p>All name that refer to the same object are affected by a mutation</p>
-</li>
-<li><p>Only objects of mutable types can change: list &amp; dictionaries</p>
-</li>
-<li><p>ps: 在计算机科学中，变异是一个词，它在对象发生变化的时候使用</p>
-</li>
-</ul>
-<blockquote>
-<p>ex: dictionary</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; numerals = &#123;&#x27;I&#x27; : 1, &#x27;V&#x27; : 5, &#x27;X&#x27; : 10&#125;</span><br><span class="line">&gt;&gt;&gt; numerals</span><br><span class="line">&#123;&#x27;I&#x27;: 1, &#x27;V&#x27;: 5, &#x27;X&#x27;: 10&#125;</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;X&#x27;] </span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;X&#x27;] = 11</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;X&#x27;]      </span><br><span class="line">11</span><br><span class="line">&gt;&gt;&gt; numerals      </span><br><span class="line">&#123;&#x27;I&#x27;: 1, &#x27;V&#x27;: 5, &#x27;X&#x27;: 11&#125;</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;L&#x27;] = 50</span><br><span class="line">&gt;&gt;&gt; numerals      </span><br><span class="line">&#123;&#x27;I&#x27;: 1, &#x27;V&#x27;: 5, &#x27;X&#x27;: 11, &#x27;L&#x27;: 50&#125;</span><br><span class="line">&gt;&gt;&gt; numerals[&#x27;L&#x27;]      </span><br><span class="line">50</span><br><span class="line">&gt;&gt;&gt; numerals.pop(&#x27;X&#x27;)</span><br><span class="line">11</span><br><span class="line">&gt;&gt;&gt; numerals.get(&#x27;X&#x27;) </span><br><span class="line">&gt;&gt;&gt; numerals          </span><br><span class="line">&#123;&#x27;I&#x27;: 1, &#x27;V&#x27;: 5, &#x27;L&#x27;: 50&#125;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Mutation Can Happen Within a Function Call</p>
-</blockquote>
-<ul>
-<li>A function can change the value of any object in its scope</li>
-</ul>
-<hr>
-<h3 id="Tuples-–-元组"><a href="#Tuples-–-元组" class="headerlink" title="Tuples – 元组"></a><strong>Tuples – 元组</strong></h3><blockquote>
-<p>元组是序列，但它们是不可变的序列，意味着它们无法再被更改</p>
-</blockquote>
-<blockquote>
-<p>Immutable values are protected from mutation</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; turtle = (1, 2, 3)</span><br><span class="line">&gt;&gt;&gt; ooze() #Next lecture: ooze can change turtle&#x27;s binding</span><br><span class="line">&gt;&gt;&gt; turtle</span><br><span class="line">(1, 2, 3)</span><br></pre></td></tr></table></figure>
-
-<p>字符串，元组都是不可改变的值，唯一可变的值是列表</p>
-<hr>
-<h3 id="Mutable-Function"><a href="#Mutable-Function" class="headerlink" title="Mutable Function"></a><strong>Mutable Function</strong></h3><blockquote>
-<p>withdraw from bank</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def make_withdraw_list(balance):</span><br><span class="line">    b = [balance]</span><br><span class="line">    def withdraw(amount):</span><br><span class="line">        if amount &gt; b[0]</span><br><span class="line">            return &#x27;Insufficient funds&#x27;</span><br><span class="line">    b[0] = b[0] - amount</span><br><span class="line">    return b[0]</span><br><span class="line">return withdraw</span><br><span class="line"></span><br><span class="line">withdraw = make_withdraw_list(100)</span><br><span class="line">withdraw(25)</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Part-13-Iterators"><a href="#Part-13-Iterators" class="headerlink" title="Part 13 Iterators"></a>Part 13 Iterators</h2><blockquote>
-<p>A container can provide an iterator that provides access to its elements in some order</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iter(iterable):Return an iterator over the elements of an iterable value.</span><br><span class="line"></span><br><span class="line">next(iterator):Return the next element in an iterator</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = [[1, 2], 3, 4, 5]</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">[[1, 2], 3, 4, 5]</span><br><span class="line">&gt;&gt;&gt; next(s)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">TypeError: &#x27;list&#x27; object is not an iterator</span><br><span class="line">&gt;&gt;&gt; t = iter(s)</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">[1, 2]</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; list(t)</span><br><span class="line">[4, 5]</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">StopIteration</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="Dictionary-iteration"><a href="#Dictionary-iteration" class="headerlink" title="Dictionary iteration"></a><strong>Dictionary iteration</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; d = &#123;&#x27;one&#x27;: 1, &#x27;two&#x27;: 2, &#x27;three&#x27;: 3&#125;</span><br><span class="line">&gt;&gt;&gt; d[&#x27;zero&#x27;] = 0</span><br><span class="line">&gt;&gt;&gt; k = iter(d.key()) # or iter(d)</span><br><span class="line">&gt;&gt;&gt; v = iter(d.values())</span><br><span class="line">&gt;&gt;&gt; i = iter(d.items())</span><br></pre></td></tr></table></figure>
-
-<p>然后我们就可以通过next函数，分别来遍历字典的键、值、键值对这些内容。补充一点，如果我们已经构建了迭代器，如果我们在这个字典中新增或删减一个键值对(item),那么我们将无法进行next的遍历，因为整个字典的结构已经被破坏了，我们必须构造一个新的字典迭代器。但是如果我们知识改变了字典当中某一个键的值，我们依然可以使用这个字典迭代器进行next的遍历，因为整个字典的结构没有发生变化。</p>
-<hr>
-<h3 id="For-Statements"><a href="#For-Statements" class="headerlink" title="For Statements"></a><strong>For Statements</strong></h3><blockquote>
-<p>先说结论，如果我在for语句中使用迭代器，我仍然可以遍历所有元素直达到末尾，但这会推进迭代器，使得我不能再次使用它，另外一方面，如果我使用的是可迭代对象，比如范围本身，在for语句中每次使用它时，我可以从头到尾遍历整个内容而不用担心任何的变化</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; r = range(3, 6)</span><br><span class="line">&gt;&gt;&gt; ri = iter(r)</span><br><span class="line">&gt;&gt;&gt; for i in ri:</span><br><span class="line">...     print(i)</span><br><span class="line">...</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; for i in r:</span><br><span class="line">...     print(i)</span><br><span class="line">...</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; for i in ri:</span><br><span class="line">...     print(i)</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="Built-In-Iterator-Function"><a href="#Built-In-Iterator-Function" class="headerlink" title="Built-In Iterator Function"></a><strong>Built-In Iterator Function</strong></h3><blockquote>
-<p>Many built-in Python sequence operations return iterators that compute results lazily</p>
-</blockquote>
-<blockquote>
-<p>都不会直接返回所有的值，而是会返回一个迭代器</p>
-</blockquote>
-<ul>
-<li>map(func, iterable):  Iterate over func(x) for x in iterable</li>
-<li>filter(fun, iterable): Iterate over x in iterable if func(x)</li>
-<li>zip(first_iter, second_iter): Iterate over co-indexed (x, y) pairs</li>
-<li>reversed(sequence): Iterate over x in a sequence in reverse order</li>
-</ul>
-<p>To view the contents of an iterator, place the resulting elements into a container</p>
-<ul>
-<li>list(iterable): Create a list containing all x in iterable</li>
-<li>tuple(iterable): Create a tuple containing all x in iterable</li>
-<li>sorted(iterable): Create a sorted list containing x in iterable</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def double(x):</span><br><span class="line">...     print(&#x27;**&#x27;, x, &#x27;=&gt;&#x27;, 2*x, &#x27;**&#x27;)</span><br><span class="line">...     return 2*x</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; m = map(double, range(3, 7))</span><br><span class="line">&gt;&gt;&gt; f = lambda y: y &gt;= 10</span><br><span class="line">&gt;&gt;&gt; t = filter(f, m)</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">** 3 =&gt; 6 **</span><br><span class="line">** 4 =&gt; 8 **</span><br><span class="line">** 5 =&gt; 10 **</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">** 6 =&gt; 12 **</span><br><span class="line">12</span><br><span class="line">&gt;&gt;&gt; list(t)</span><br><span class="line">[]</span><br><span class="line">&gt;&gt;&gt; list(filter(f, map(double, range(3, 7))))</span><br><span class="line">** 3 =&gt; 6 **</span><br><span class="line">** 4 =&gt; 8 **</span><br><span class="line">** 5 =&gt; 10 **</span><br><span class="line">** 6 =&gt; 12 **</span><br><span class="line">[10, 12]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>map(double, range(3, 7)) 是惰性迭代器，只有在需要时才会逐个计算。</li>
-<li>filter(f, m) 通过 f 来筛选 m 中符合条件的值，也是惰性求值的。</li>
-<li>当通过 next() 消费迭代器时，元素是逐个计算并传递的。</li>
-<li>当 list() 被调用时，迭代器会被完全消费，所有值都被计算。</li>
-<li>在list(filter(f, map(double, range(3, 7))))中，map(double, range(3, 7)) 和 filter(f, …) 是一条连续的管道，直接将所有结果都传递给 list()。由于 list() 会遍历所有元素，map 和 filter 都会立即完全计算。与之前的操作不同，这次 list() 强制计算所有元素，结果是 [10, 12]，符合 f(y) 的条件的值会被保留</li>
-</ul>
-<blockquote>
-<p>懒惰计算主要是为了方便，因为它允许你指定如何计算大量的值，但如果你实际上不需要所有这些值，那么你就不必计算它们</p>
-</blockquote>
-<h3 id="The-Zip-function"><a href="#The-Zip-function" class="headerlink" title="The Zip function"></a>The Zip function</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list(zip([1, 2], [3, 4]))</span><br><span class="line">[(1, 3), (2, 4)]</span><br><span class="line">&gt;&gt;&gt; list(zip([1, 2], [3, 4, 5]))  </span><br><span class="line">[(1, 3), (2, 4)]</span><br><span class="line">&gt;&gt;&gt; list(zip([1, 2], [3, 4, 5], [6, 7])) </span><br><span class="line">[(1, 3, 6), (2, 4, 7)]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Implement palindrome, which returns whether s is the same forward and backward</p>
-</blockquote>
-<p>有两种方法可以实现</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def palindrome(s):</span><br><span class="line">    &quot;&quot;&quot;Return whether s is the same backward and forward.</span><br><span class="line"></span><br><span class="line">    &gt;&gt;&gt; palindrome([3, 1, 4, 1, 5])</span><br><span class="line">    False</span><br><span class="line">    &gt;&gt;&gt; palindrome([3, 1, 4, 1, 3])</span><br><span class="line">    True</span><br><span class="line">    &gt;&gt;&gt; palindrome(&#x27;seveneves&#x27;)</span><br><span class="line">    True</span><br><span class="line">    &gt;&gt;&gt; palindrome(&#x27;seven eves&#x27;)</span><br><span class="line">    False</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return list(s) == list(reversed(s))</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def palindrome(s):</span><br><span class="line">    &quot;&quot;&quot;Return whether s is the same backward and forward.</span><br><span class="line"></span><br><span class="line">    &gt;&gt;&gt; palindrome([3, 1, 4, 1, 5])</span><br><span class="line">    False</span><br><span class="line">    &gt;&gt;&gt; palindrome([3, 1, 4, 1, 3])</span><br><span class="line">    True</span><br><span class="line">    &gt;&gt;&gt; palindrome(&#x27;seveneves&#x27;)</span><br><span class="line">    True</span><br><span class="line">    &gt;&gt;&gt; palindrome(&#x27;seven eves&#x27;)</span><br><span class="line">    False</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return all([a == b for a, b in zip(s, reversed(s))])</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a><strong>Generators</strong></h3><blockquote>
-<p>A generator is a special kind of iterator,just like a map object is a special kind of iterator.</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def plus_minus(3):</span><br><span class="line">    yield x</span><br><span class="line">    yield -x</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; t = plus_minus(3)</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">-3</span><br></pre></td></tr></table></figure>
-
-<p>When a generator function is called, it returns a generator, and that generator iterates over the yields of the function.</p>
-<blockquote>
-<p>A yield from statement yields all values from an iterator or iterable.</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list(a_then_b([3, 4], [5, 6]))</span><br><span class="line">[3, 4, 5, 6]</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def a_then_b(a, b):</span><br><span class="line">    yield from a</span><br><span class="line">    yield from b</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def countdown(k):</span><br><span class="line">    if k &gt; 0:</span><br><span class="line">        yield k</span><br><span class="line">        yield from countdown(k-1)</span><br><span class="line">    else:</span><br><span class="line">        yield &#x27;Blast off&#x27;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def prefixex(s):</span><br><span class="line">    if s:</span><br><span class="line">        yield from prefixex(s[:-1])</span><br><span class="line">        yield s</span><br><span class="line"></span><br><span class="line">def subsrings(s):</span><br><span class="line">    if s:</span><br><span class="line">        yield from profixex(s)</span><br><span class="line">        yield from substrings(s[1:])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h2 id="Part-14-Object-Oriented-Programming–面向对象编程"><a href="#Part-14-Object-Oriented-Programming–面向对象编程" class="headerlink" title="Part 14: Object-Oriented Programming–面向对象编程"></a>Part 14: Object-Oriented Programming–面向对象编程</h2><p>前面在讲述变异这一章节的时候，就已经谈到过对象了，但是由于面向对象编程太重要了，还是有必要单独拿一个章节来讲</p>
-<p>我们需要将非常复杂的大型程序组织成为很小的模块化组件，这样就可以分别编写、测试和思考，因为人类一次只能处理这么多的复杂性问题。</p>
-<blockquote>
-<p>A method for organizing programs</p>
-</blockquote>
-<ul>
-<li>Extends data abstraction</li>
-<li>Bundles together information and related behavior</li>
-</ul>
-<blockquote>
-<p>A metaphor for computation using distributed state</p>
-</blockquote>
-<ul>
-<li>Each object has its own local state</li>
-<li>Each object also knows how to manage its own local state</li>
-<li>Interact with an object using its methods</li>
-<li>Several objects may all be instances of a common class</li>
-<li>Different classes may relate to each other</li>
-</ul>
-<blockquote>
-<p>Specialized syntax &amp; vocabulary to support this metaphor</p>
-</blockquote>
-<ul>
-<li>A class defines how objects of a particular type behave</li>
-<li>A objects is an instance of a class; the class is its type</li>
-<li>A method is a function called on an object using a dot expression: s.append(5)</li>
-</ul>
-<blockquote>
-<p>Example:Lists</p>
-</blockquote>
-<p>The built-in list function is a class</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list</span><br><span class="line">&lt;class &#x27;list&#x27;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>Calling list on an iterable creates a new list object</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = list(range(3))</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">[0, 1, 2]</span><br><span class="line">&gt;&gt;&gt; types(s)</span><br><span class="line">&lt;class &#x27;list&#x27;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>The list class defines how everything about how lists work:</p>
-<ul>
-<li>Methods append, extend, insert, pop, remove, etc</li>
-<li>Addition and multiplication: s + t</li>
-<li>Item lookup and assignment: s[0] &#x3D; s[3]</li>
-</ul>
-<hr>
-<h3 id="Class-Statements"><a href="#Class-Statements" class="headerlink" title="Class Statements"></a><strong>Class Statements</strong></h3><blockquote>
-<p>A class describes the behavior of its instances</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Account:</span><br><span class="line">    def __init__(self, account_holder):</span><br><span class="line">        self.balance = 0</span><br><span class="line">        self.holder = account_holder</span><br><span class="line"></span><br><span class="line">    def deposit(self, amount):</span><br><span class="line">        self.balance = self.balance + amount</span><br><span class="line">        return self.balance</span><br><span class="line"></span><br><span class="line">    def withdraw(self, amount):</span><br><span class="line">        if amount &gt; self.balance:</span><br><span class="line">            return &#x27;Insufficient funds&#x27;</span><br><span class="line">        self.balance = self.balance - amount</span><br><span class="line">        return self.balance</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="Object-Identity"><a href="#Object-Identity" class="headerlink" title="Object Identity"></a><strong>Object Identity</strong></h3><blockquote>
-<p>Every object that is an instance of a user-defined class has a unique identity</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = Account(&#x27;John&#x27;)</span><br><span class="line">&gt;&gt;&gt; b = Account(&#x27;Jack&#x27;)</span><br><span class="line">&gt;&gt;&gt; a.balance</span><br><span class="line">0</span><br><span class="line">&gt;&gt;&gt; b.holder</span><br><span class="line">&#x27;Jack&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>Identity operators “is” and “is not” test if two expressions evaluate to the same object</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a is a</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; a is not b</span><br><span class="line">True</span><br></pre></td></tr></table></figure>
-
-<p>Binding an object to a new name using assignment does not create a new project.</p>
-<hr>
-<h3 id="Class-Attributes"><a href="#Class-Attributes" class="headerlink" title="Class Attributes"></a><strong>Class Attributes</strong></h3><blockquote>
-<p>A class statement creates a new class and binds that class to name in the first frame of the current environment.</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class &lt;name&gt;:</span><br><span class="line">    &lt;suite&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Assignment &amp; def statements in suite creat attributes of the class(not names in frames)</p>
-</blockquote>
-<blockquote>
-<p>Class attributes are “shared” across all instances of a class because they are attributes of the class, not the instance.</p>
-</blockquote>
-<hr>
-<h3 id="Attribute-Lookup"><a href="#Attribute-Lookup" class="headerlink" title="Attribute Lookup"></a><strong>Attribute Lookup</strong></h3><blockquote>
-<p>Both instances and classes have attributes that can be looked up by dot expressions.</p>
-</blockquote>
-<blockquote>
-<p>To evaluate a dot expression:</p>
-</blockquote>
-<ul>
-<li>Evaluate the expression to the left of the dot, which yields the object of the dot expression</li>
-<li>name is matched against the instance attributes of that object; if can attribute with that name exists, its value is returned</li>
-<li>If not, name is looked up in a class, which yields a class attribute value</li>
-<li>That value is returned unless it is a function, in which case a bound method is returned instead</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; tom_account.balance</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; getattr(tom_account, &#x27;balance&#x27;)</span><br><span class="line">10</span><br><span class="line">&gt;&gt;&gt; hasattr(tom_account, &#x27;deposit&#x27;)</span><br><span class="line">True</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="Attribute-assignment"><a href="#Attribute-assignment" class="headerlink" title="Attribute assignment"></a><strong>Attribute assignment</strong></h3><p>这一部分的核心在于你要搞清楚你是对整个类的属性进行更改还是对实例的属性进行更改。实例属性更改的优先级更高。</p>
-<hr>
-<h3 id="Method-Calls"><a href="#Method-Calls" class="headerlink" title="Method Calls"></a><strong>Method Calls</strong></h3><blockquote>
-<p>Calling or invoking a method on an object is the primary way to interact with an object</p>
-</blockquote>
-<blockquote>
-<p>在对象上调用或调用方法是与对象交互的主要方式。</p>
-</blockquote>
-<hr>
-<h3 id="Bound-Methods"><a href="#Bound-Methods" class="headerlink" title="Bound Methods"></a><strong>Bound Methods</strong></h3><blockquote>
-<p>Object + Function &#x3D;  Bound Method</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; type(Account.deposit)</span><br><span class="line">&lt;class &#x27;function&#x27;&gt;</span><br><span class="line">&gt;&gt;&gt; type(tom_account.deposit)</span><br><span class="line">&lt;class &#x27;method&#x27;&gt;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; Account.deposit(tom_account, 1001)</span><br><span class="line">1011</span><br><span class="line">&gt;&gt;&gt; tom_account.deposit(1007)</span><br><span class="line">2018</span><br></pre></td></tr></table></figure>
 
 
 
@@ -623,7 +287,7 @@
         
         <br>
         <strong>本文链接：</strong>
-        <a rel="license" href="https://blog.visionary-5.top/2024/09/06/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(3)/">https://blog.visionary-5.top/2024/09/06/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(3)/</a>
+        <a rel="license" href="https://blog.visionary-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/">https://blog.visionary-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/</a>
         <br>
         <strong>版权声明：</strong>
         本作品采用
@@ -730,7 +394,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://visionary-5.github.iory-5.top/2024/09/06/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(3)/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://visionary-5.github.iory-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -745,18 +409,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2024/09/10/%E5%85%B3%E4%BA%8E%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%98%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9C%A8github%20page%E4%B8%8A%E8%BF%99%E4%BB%B6%E4%BA%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          关于我的个人博客最终还是部署在github page上这件事
-        
-      </div>
-    </a>
   
-  
-    <a href="/2024/09/05/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(2)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CS61a编程语言课自学历程————UC Berkeley(2)</div>
+    <a href="/2024/09/10/%E5%85%B3%E4%BA%8E%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%98%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9C%A8github%20page%E4%B8%8A%E8%BF%99%E4%BB%B6%E4%BA%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于我的个人博客最终还是部署在github page上这件事</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -784,7 +439,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (3)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-10-Data"><span class="toc-number">1.1.</span> <span class="toc-text">Part 10 Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-abstraction"><span class="toc-number">1.1.1.</span> <span class="toc-text">Data abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Representations"><span class="toc-number">1.1.2.</span> <span class="toc-text">Data Representations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstraction-Barriers"><span class="toc-number">1.1.3.</span> <span class="toc-text">Abstraction Barriers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pairs"><span class="toc-number">1.1.4.</span> <span class="toc-text">Pairs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-Trees"><span class="toc-number">1.2.</span> <span class="toc-text">Part 11: Trees</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementing-the-Tree-Abstraction"><span class="toc-number">1.2.1.</span> <span class="toc-text">Implementing the Tree Abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree-Processing"><span class="toc-number">1.2.2.</span> <span class="toc-text">Tree Processing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discussion-Question"><span class="toc-number">1.2.3.</span> <span class="toc-text">Discussion Question</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-Trees"><span class="toc-number">1.2.4.</span> <span class="toc-text">Creating Trees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Mutablity"><span class="toc-number">1.3.</span> <span class="toc-text">Part 12: Mutablity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#object"><span class="toc-number">1.3.1.</span> <span class="toc-text">object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutation-Operations-%E2%80%93%E5%8F%98%E5%BC%82%E7%AE%97%E5%AD%90"><span class="toc-number">1.3.2.</span> <span class="toc-text">Mutation Operations –变异算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tuples-%E2%80%93-%E5%85%83%E7%BB%84"><span class="toc-number">1.3.3.</span> <span class="toc-text">Tuples – 元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutable-Function"><span class="toc-number">1.3.4.</span> <span class="toc-text">Mutable Function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-13-Iterators"><span class="toc-number">1.4.</span> <span class="toc-text">Part 13 Iterators</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dictionary-iteration"><span class="toc-number">1.4.1.</span> <span class="toc-text">Dictionary iteration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#For-Statements"><span class="toc-number">1.4.2.</span> <span class="toc-text">For Statements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Built-In-Iterator-Function"><span class="toc-number">1.4.3.</span> <span class="toc-text">Built-In Iterator Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Zip-function"><span class="toc-number">1.4.4.</span> <span class="toc-text">The Zip function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generators"><span class="toc-number">1.4.5.</span> <span class="toc-text">Generators</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-14-Object-Oriented-Programming%E2%80%93%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="toc-number">1.5.</span> <span class="toc-text">Part 14: Object-Oriented Programming–面向对象编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-Statements"><span class="toc-number">1.5.1.</span> <span class="toc-text">Class Statements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Identity"><span class="toc-number">1.5.2.</span> <span class="toc-text">Object Identity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-Attributes"><span class="toc-number">1.5.3.</span> <span class="toc-text">Class Attributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Attribute-Lookup"><span class="toc-number">1.5.4.</span> <span class="toc-text">Attribute Lookup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Attribute-assignment"><span class="toc-number">1.5.5.</span> <span class="toc-text">Attribute assignment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Method-Calls"><span class="toc-number">1.5.6.</span> <span class="toc-text">Method Calls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bound-Methods"><span class="toc-number">1.5.7.</span> <span class="toc-text">Bound Methods</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-4"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (4)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-15-Inheritance-%E2%80%93%E7%BB%A7%E6%89%BF"><span class="toc-number">1.1.</span> <span class="toc-text">Part 15: Inheritance –继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Oriented-Design"><span class="toc-number">1.1.1.</span> <span class="toc-text">Object-Oriented Design</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
