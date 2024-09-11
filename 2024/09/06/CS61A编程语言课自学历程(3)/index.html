@@ -17,7 +17,7 @@
 <meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结 (3)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-06T07:30:30.000Z">
-<meta property="article:modified_time" content="2024-09-09T11:10:17.912Z">
+<meta property="article:modified_time" content="2024-09-11T06:00:43.064Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -466,7 +466,86 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def palindrome(s):</span><br><span class="line">    &quot;&quot;&quot;Return whether s is the same backward and forward.</span><br><span class="line"></span><br><span class="line">    &gt;&gt;&gt; palindrome([3, 1, 4, 1, 5])</span><br><span class="line">    False</span><br><span class="line">    &gt;&gt;&gt; palindrome([3, 1, 4, 1, 3])</span><br><span class="line">    True</span><br><span class="line">    &gt;&gt;&gt; palindrome(&#x27;seveneves&#x27;)</span><br><span class="line">    True</span><br><span class="line">    &gt;&gt;&gt; palindrome(&#x27;seven eves&#x27;)</span><br><span class="line">    False</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    return all([a == b for a, b in zip(s, reversed(s))])</span><br></pre></td></tr></table></figure>
 
 <hr>
+<h3 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a><strong>Generators</strong></h3><blockquote>
+<p>A generator is a special kind of iterator,just like a map object is a special kind of iterator.</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def plus_minus(3):</span><br><span class="line">    yield x</span><br><span class="line">    yield -x</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; t = plus_minus(3)</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">-3</span><br></pre></td></tr></table></figure>
 
+<p>When a generator function is called, it returns a generator, and that generator iterates over the yields of the function.</p>
+<blockquote>
+<p>A yield from statement yields all values from an iterator or iterable.</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list(a_then_b([3, 4], [5, 6]))</span><br><span class="line">[3, 4, 5, 6]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def a_then_b(a, b):</span><br><span class="line">    yield from a</span><br><span class="line">    yield from b</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def countdown(k):</span><br><span class="line">    if k &gt; 0:</span><br><span class="line">        yield k</span><br><span class="line">        yield from countdown(k-1)</span><br><span class="line">    else:</span><br><span class="line">        yield &#x27;Blast off&#x27;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def prefixex(s):</span><br><span class="line">    if s:</span><br><span class="line">        yield from prefixex(s[:-1])</span><br><span class="line">        yield s</span><br><span class="line"></span><br><span class="line">def subsrings(s):</span><br><span class="line">    if s:</span><br><span class="line">        yield from profixex(s)</span><br><span class="line">        yield from substrings(s[1:])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="Part-14-Object-Oriented-Programming–面向对象编程"><a href="#Part-14-Object-Oriented-Programming–面向对象编程" class="headerlink" title="Part 14: Object-Oriented Programming–面向对象编程"></a>Part 14: Object-Oriented Programming–面向对象编程</h2><p>前面在讲述变异这一章节的时候，就已经谈到过对象了，但是由于面向对象编程太重要了，还是有必要单独拿一个章节来讲</p>
+<p>我们需要将非常复杂的大型程序组织成为很小的模块化组件，这样就可以分别编写、测试和思考，因为人类一次只能处理这么多的复杂性问题。</p>
+<blockquote>
+<p>A method for organizing programs</p>
+</blockquote>
+<ul>
+<li>Extends data abstraction</li>
+<li>Bundles together information and related behavior</li>
+</ul>
+<blockquote>
+<p>A metaphor for computation using distributed state</p>
+</blockquote>
+<ul>
+<li>Each object has its own local state</li>
+<li>Each object also knows how to manage its own local state</li>
+<li>Interact with an object using its methods</li>
+<li>Several objects may all be instances of a common class</li>
+<li>Different classes may relate to each other</li>
+</ul>
+<blockquote>
+<p>Specialized syntax &amp; vocabulary to support this metaphor</p>
+</blockquote>
+<ul>
+<li>A class defines how objects of a particular type behave</li>
+<li>A objects is an instance of a class; the class is its type</li>
+<li>A method is a function called on an object using a dot expression: s.append(5)</li>
+</ul>
+<blockquote>
+<p>Example:Lists</p>
+</blockquote>
+<p>The built-in list function is a class</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list</span><br><span class="line">&lt;class &#x27;list&#x27;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Calling list on an iterable creates a new list object</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = list(range(3))</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">[0, 1, 2]</span><br><span class="line">&gt;&gt;&gt; types(s)</span><br><span class="line">&lt;class &#x27;list&#x27;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>The list class defines how everything about how lists work:</p>
+<ul>
+<li>Methods append, extend, insert, pop, remove, etc</li>
+<li>Addition and multiplication: s + t</li>
+<li>Item lookup and assignment: s[0] &#x3D; s[3]</li>
+</ul>
+<hr>
+<h3 id="Class-Statements"><a href="#Class-Statements" class="headerlink" title="Class Statements"></a><strong>Class Statements</strong></h3><blockquote>
+<p>A class describes the behavior of its instances</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Account:</span><br><span class="line">    def __init__(self, account_holder):</span><br><span class="line">        self.balance = 0</span><br><span class="line">        self.holder = account_holder</span><br><span class="line"></span><br><span class="line">    def deposit(self, amount):</span><br><span class="line">        self.balance = self.balance + amount</span><br><span class="line">        return self.balance</span><br><span class="line"></span><br><span class="line">    def withdraw(self, amount):</span><br><span class="line">        if amount &gt; self.balance:</span><br><span class="line">            return &#x27;Insufficient funds&#x27;</span><br><span class="line">        self.balance = self.balance - amount</span><br><span class="line">        return self.balance</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Object-Identity"><a href="#Object-Identity" class="headerlink" title="Object Identity"></a><strong>Object Identity</strong></h3><blockquote>
+<p>Every object that is an instance of a user-defined class has a unique identity</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = Account(&#x27;John&#x27;)</span><br><span class="line">&gt;&gt;&gt; b = Account(&#x27;Jack&#x27;)</span><br><span class="line">&gt;&gt;&gt; a.balance</span><br><span class="line">0</span><br><span class="line">&gt;&gt;&gt; b.holder</span><br><span class="line">&#x27;Jack&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>Identity operators “is” and “is not” test if two expressions evaluate to the same object</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a is a</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; a is not b</span><br><span class="line">True</span><br></pre></td></tr></table></figure>
+
+<p>Binding an object to a new name using assignment does not create a new project.</p>
+<hr>
+<h3 id="Class-Attributes"><a href="#Class-Attributes" class="headerlink" title="Class Attributes"></a><strong>Class Attributes</strong></h3>
       
       <!-- 增加版权声明 -->
 
@@ -661,7 +740,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (3)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-10-Data"><span class="toc-number">1.1.</span> <span class="toc-text">Part 10 Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-abstraction"><span class="toc-number">1.1.1.</span> <span class="toc-text">Data abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Representations"><span class="toc-number">1.1.2.</span> <span class="toc-text">Data Representations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstraction-Barriers"><span class="toc-number">1.1.3.</span> <span class="toc-text">Abstraction Barriers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pairs"><span class="toc-number">1.1.4.</span> <span class="toc-text">Pairs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-Trees"><span class="toc-number">1.2.</span> <span class="toc-text">Part 11: Trees</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementing-the-Tree-Abstraction"><span class="toc-number">1.2.1.</span> <span class="toc-text">Implementing the Tree Abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree-Processing"><span class="toc-number">1.2.2.</span> <span class="toc-text">Tree Processing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discussion-Question"><span class="toc-number">1.2.3.</span> <span class="toc-text">Discussion Question</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-Trees"><span class="toc-number">1.2.4.</span> <span class="toc-text">Creating Trees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Mutablity"><span class="toc-number">1.3.</span> <span class="toc-text">Part 12: Mutablity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#object"><span class="toc-number">1.3.1.</span> <span class="toc-text">object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutation-Operations-%E2%80%93%E5%8F%98%E5%BC%82%E7%AE%97%E5%AD%90"><span class="toc-number">1.3.2.</span> <span class="toc-text">Mutation Operations –变异算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tuples-%E2%80%93-%E5%85%83%E7%BB%84"><span class="toc-number">1.3.3.</span> <span class="toc-text">Tuples – 元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutable-Function"><span class="toc-number">1.3.4.</span> <span class="toc-text">Mutable Function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-13-Iterators"><span class="toc-number">1.4.</span> <span class="toc-text">Part 13 Iterators</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dictionary-iteration"><span class="toc-number">1.4.1.</span> <span class="toc-text">Dictionary iteration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#For-Statements"><span class="toc-number">1.4.2.</span> <span class="toc-text">For Statements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Built-In-Iterator-Function"><span class="toc-number">1.4.3.</span> <span class="toc-text">Built-In Iterator Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Zip-function"><span class="toc-number">1.4.4.</span> <span class="toc-text">The Zip function</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-3"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (3)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-10-Data"><span class="toc-number">1.1.</span> <span class="toc-text">Part 10 Data</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-abstraction"><span class="toc-number">1.1.1.</span> <span class="toc-text">Data abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Representations"><span class="toc-number">1.1.2.</span> <span class="toc-text">Data Representations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstraction-Barriers"><span class="toc-number">1.1.3.</span> <span class="toc-text">Abstraction Barriers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pairs"><span class="toc-number">1.1.4.</span> <span class="toc-text">Pairs</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-11-Trees"><span class="toc-number">1.2.</span> <span class="toc-text">Part 11: Trees</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementing-the-Tree-Abstraction"><span class="toc-number">1.2.1.</span> <span class="toc-text">Implementing the Tree Abstraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree-Processing"><span class="toc-number">1.2.2.</span> <span class="toc-text">Tree Processing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Discussion-Question"><span class="toc-number">1.2.3.</span> <span class="toc-text">Discussion Question</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-Trees"><span class="toc-number">1.2.4.</span> <span class="toc-text">Creating Trees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-12-Mutablity"><span class="toc-number">1.3.</span> <span class="toc-text">Part 12: Mutablity</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#object"><span class="toc-number">1.3.1.</span> <span class="toc-text">object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutation-Operations-%E2%80%93%E5%8F%98%E5%BC%82%E7%AE%97%E5%AD%90"><span class="toc-number">1.3.2.</span> <span class="toc-text">Mutation Operations –变异算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tuples-%E2%80%93-%E5%85%83%E7%BB%84"><span class="toc-number">1.3.3.</span> <span class="toc-text">Tuples – 元组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mutable-Function"><span class="toc-number">1.3.4.</span> <span class="toc-text">Mutable Function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-13-Iterators"><span class="toc-number">1.4.</span> <span class="toc-text">Part 13 Iterators</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dictionary-iteration"><span class="toc-number">1.4.1.</span> <span class="toc-text">Dictionary iteration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#For-Statements"><span class="toc-number">1.4.2.</span> <span class="toc-text">For Statements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Built-In-Iterator-Function"><span class="toc-number">1.4.3.</span> <span class="toc-text">Built-In Iterator Function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Zip-function"><span class="toc-number">1.4.4.</span> <span class="toc-text">The Zip function</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generators"><span class="toc-number">1.4.5.</span> <span class="toc-text">Generators</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-14-Object-Oriented-Programming%E2%80%93%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="toc-number">1.5.</span> <span class="toc-text">Part 14: Object-Oriented Programming–面向对象编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-Statements"><span class="toc-number">1.5.1.</span> <span class="toc-text">Class Statements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Identity"><span class="toc-number">1.5.2.</span> <span class="toc-text">Object Identity</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-Attributes"><span class="toc-number">1.5.3.</span> <span class="toc-text">Class Attributes</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
