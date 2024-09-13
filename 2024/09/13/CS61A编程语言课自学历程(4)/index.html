@@ -12,12 +12,12 @@
   <meta name="description" content="UC Berkeley CS61a自学历程和学习总结 (4)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS61a编程语言课自学历程————UC Berkeley(4)">
-<meta property="og:url" content="https://blog.visionary-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/index.html">
+<meta property="og:url" content="https://blog.visionary-5.top/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/index.html">
 <meta property="og:site_name" content="Arua&#39;s blog">
 <meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结 (4)">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-09-11T11:30:30.000Z">
-<meta property="article:modified_time" content="2024-09-11T12:23:31.133Z">
+<meta property="article:published_time" content="2024-09-13T11:30:30.000Z">
+<meta property="article:modified_time" content="2024-09-13T10:37:16.898Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -191,8 +191,8 @@
     
 
     
-      <a href="/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" class="archive-article-date">
-  	<time datetime="2024-09-11T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-11</time>
+      <a href="/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" class="archive-article-date">
+  	<time datetime="2024-09-13T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-13</time>
 </a>
     
 
@@ -249,11 +249,122 @@
 <p>让我们快速搭建一个银行</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">class Account:</span><br><span class="line">    def __init__(self, account_holder):</span><br><span class="line">        self.balance = 0</span><br><span class="line">        self.holder = account_holder</span><br><span class="line"></span><br><span class="line">    def deposit(self, amount):</span><br><span class="line">        self.balance = self.balance + amount</span><br><span class="line">        return self.balance</span><br><span class="line"></span><br><span class="line">    def withdraw(self, amount):</span><br><span class="line">        if amount &gt; self.balance:</span><br><span class="line">            return &#x27;Insufficient funds&#x27;</span><br><span class="line">        self.balance = self.balance - amount</span><br><span class="line">        return self.balance</span><br><span class="line"></span><br><span class="line">class CheckingAccount(Account):</span><br><span class="line">    &quot;&quot;&quot;A bank account that charges for withdrawals&quot;&quot;&quot;</span><br><span class="line">    withdraw_fee = 1</span><br><span class="line">    interest = 0.01</span><br><span class="line">    def withdraw(self, amount):</span><br><span class="line">        return Account.withdraw(self, amount + self.withraw_fee)</span><br><span class="line"></span><br><span class="line">class Bank():</span><br><span class="line">    &quot;&quot;&quot;A bank has accounts.</span><br><span class="line">    &gt;&gt;&gt; bank = Bank()</span><br><span class="line">    &gt;&gt;&gt; johh = bank.open_account(&#x27;John&#x27;, 10)</span><br><span class="line">    &gt;&gt;&gt; jack = bank.open_account(&#x27;Jack&#x27;, 5, CheckingAccount)</span><br><span class="line">    &gt;&gt;&gt; john.interest</span><br><span class="line">    0.02</span><br><span class="line">    &gt;&gt;&gt; jack.interest</span><br><span class="line">    0.01</span><br><span class="line">    &gt;&gt;&gt; bank.pay_interest()</span><br><span class="line">    &gt;&gt;&gt; john.balance</span><br><span class="line">    10.2</span><br><span class="line">    &gt;&gt;&gt; bank.too_big_to_fail()</span><br><span class="line">    True</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.accounts = []</span><br><span class="line">    </span><br><span class="line">    def open_account(self, holder, amount, kind = Account):</span><br><span class="line">        account = kind(holder)</span><br><span class="line">        account.deposit(amount)</span><br><span class="line">        self.accounts.append(account)</span><br><span class="line">        return account</span><br><span class="line"></span><br><span class="line">    def pay_interest(self)</span><br><span class="line">        for a in self.accounts:</span><br><span class="line">            a.deposit(a.balance * a.interest)</span><br><span class="line"></span><br><span class="line">    def too_big_to_fail(self):</span><br><span class="line">        return len(self.accounts) &gt; 1</span><br></pre></td></tr></table></figure>
 
+<hr>
+<h3 id="Attributes-Lookup-Practice"><a href="#Attributes-Lookup-Practice" class="headerlink" title="Attributes Lookup Practice"></a><strong>Attributes Lookup Practice</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class A:</span><br><span class="line">    z = -1</span><br><span class="line">    def f(self, x):</span><br><span class="line">        return B(x-1)</span><br><span class="line"></span><br><span class="line">class B(A):</span><br><span class="line">    n = 4</span><br><span class="line">    def __init__(self, y):</span><br><span class="line">        if y:</span><br><span class="line">            self.z = self.f(y)</span><br><span class="line">        else:</span><br><span class="line">            self.z = C(y + 1)</span><br><span class="line"></span><br><span class="line">class C(B):</span><br><span class="line">    def f(self, x):</span><br><span class="line">        return x</span><br><span class="line"></span><br><span class="line">a = A()</span><br><span class="line">b = B(1)</span><br><span class="line">b.n = 5</span><br></pre></td></tr></table></figure>
 
 
+<p>思考一下的表达式的返回值是什么？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; C(2).n</span><br><span class="line">&gt;&gt;&gt; a.z == C.z</span><br><span class="line">&gt;&gt;&gt; a.z == b.z</span><br></pre></td></tr></table></figure>
 
+<p>同时思考以下哪些表达式是整数？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b.z</span><br><span class="line">b.z.z</span><br><span class="line">b.z.z.z</span><br><span class="line">b.z.z.z.z</span><br></pre></td></tr></table></figure>
 
+<p>这些问题就先不给出答案了，如果大家能够自己独立推理出来，那对于继承，类，属性的掌握就比较不错了。</p>
+<hr>
+<h2 id="Multiple-Inheritance"><a href="#Multiple-Inheritance" class="headerlink" title="Multiple Inheritance"></a><strong>Multiple Inheritance</strong></h2><blockquote>
+<p>Multiple inheritance is when a subclass has multiple inheritance</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class AsSeenOnTVAccount(CheckingAccount, SavingsAccount):</span><br><span class="line">    def __init__(self, account_holder):</span><br><span class="line">        self.holder = account_holder</span><br><span class="line">        self.balance = 1  # A free dollar</span><br></pre></td></tr></table></figure>
 
+<p>一个类可以从多个基类继承。</p>
+<hr>
+<h2 id="Part16-Representations"><a href="#Part16-Representations" class="headerlink" title="Part16: Representations"></a>Part16: Representations</h2><h3 id="String-Representations"><a href="#String-Representations" class="headerlink" title="String Representations"></a><strong>String Representations</strong></h3><p>为了高效地展示数据，一个对象值应该像它代表的数据一样进行行为，包括产生一个它自己的字符串表示。在像 Python 这样的交互式语言中，数据值的字符串表示是特别重要的，在交互式会话中，它可以自动地展示表达式的值的字符串形式。</p>
+<p>字符串值为人们提供了一种相互传递信息的基本媒介。字符序列可以渲染在屏幕上、打印在纸上、大声阅读出来、转换成盲文或者以莫斯码广播。字符串也是编程的基础，因为他们可以表示 Python 表达式。</p>
+<p>Python 规定所有的对象都应该生成两个不同的字符串表示：一种是人类可读的文本，另一种是 Python 可解释的表示式。字符串的构造函数，即 str，返回一个人类可读的字符串。如果可能，repr 函数返回一个 Python 可解释的表达式，该表达式的求值结果与原对象相同。repr 的文档字符串（docstring）解释了这个特性：</p>
+<p>repr(object) -&gt; string</p>
+<p>Return the canonical string representation of the object.</p>
+<p>For most object types, eval(repr(object)) &#x3D;&#x3D; object</p>
+<p>返回对象的标准字符串表示。</p>
+<p>对于大多数对象类型，eval(repr(object)) &#x3D;&#x3D; object。</p>
+<p>对于表达式的值调用 repr 的结果就是 Python 在交互式会话中所打印的内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; 12e12</span><br><span class="line">12000000000000.0</span><br><span class="line">&gt;&gt;&gt; print(repr(12e12))</span><br><span class="line">12000000000000.0</span><br></pre></td></tr></table></figure>
+
+<p>在一些情况下，不存在对原始值的字符串表示时，Python 通常生成一个被尖括号包围的描述。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; repr(min)</span><br><span class="line">&#x27;&lt;built-in function min&gt;&#x27;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>A object value should behave like the kind of data it is meant to represent</p>
+</blockquote>
+<blockquote>
+<p>In python, all objects produce two string representations:</p>
+</blockquote>
+<ul>
+<li>The str is legible to humans.</li>
+<li>The repr is legible to the Python interpreter.</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from fractions import Fraction</span><br><span class="line">&gt;&gt;&gt; half = Fraction(1, 2)</span><br><span class="line">&gt;&gt;&gt; half</span><br><span class="line">Fraction(1, 2)</span><br><span class="line">&gt;&gt;&gt; repr(half)</span><br><span class="line">&#x27;Fraction(1, 2)&#x27;</span><br><span class="line">&gt;&gt;&gt; print(half)</span><br><span class="line">1/2</span><br><span class="line">&gt;&gt;&gt; str(half)</span><br><span class="line">&#x27;1/2&#x27;</span><br><span class="line">&gt;&gt;&gt; eval(repr(half))</span><br><span class="line">Fraciton(1, 2)</span><br><span class="line">&gt;&gt;&gt; eval(str(half))</span><br><span class="line">0.5</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>str is a built-in function that takes any object, gives you back a string, where the string is some human interpretable representation of the original object</p>
+</blockquote>
+<hr>
+<h3 id="F-String"><a href="#F-String" class="headerlink" title="F-String"></a><strong>F-String</strong></h3><p>当你在 Python 中格式化字符串时，你可能习惯于使用 format() 方法。</p>
+<p>但在 Python 3.6 和更高版本中，你可以使用 f-string 来代替。f-string，也被称为格式化字符串常量，有一个更简洁的语法，在字符串格式化中可以起到很大的作用。</p>
+<blockquote>
+<p>F-Strings in Python are a feature that allow you to generate strings out of various expressions inside of a string literal</p>
+</blockquote>
+<blockquote>
+<p>F-Strings允许你在字符串文字中生成各种表达式的字符串。</p>
+</blockquote>
+<ul>
+<li>评估f-string文字的结果包含各个子表达式值的str string</li>
+<li>子表达式是在当前环境里面评估的，这意味着你可以用连接构建的任何内容，也可以用字符串插值构造。</li>
+</ul>
+<blockquote>
+<p>Syntax</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f&quot;This is an f-string &#123;var_name&#125; and &#123;var_name&#125;.&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以下给出一些使用的实例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num1 = 83</span><br><span class="line">num2 = 9</span><br><span class="line">print(f&quot;The product of &#123;num1&#125; and &#123;num2&#125; is &#123;num1 * num2&#125;.&quot;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#Output</span><br><span class="line">The product of 83 and 9 is 747.</span><br></pre></td></tr></table></figure>
+
+<p>在任何 f-string 中，{var_name}, {expression} 作为变量和表达式的占位符，并在运行时被替换成相应的值。</p>
+<blockquote>
+<p>f-string还可以使用条件语句:</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num = 87;</span><br><span class="line">print(f&quot;Is num even? &#123;True if num%2==0 else False&#125;&quot;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>调用方法：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">author = &quot;jane smith&quot;</span><br><span class="line">print(f&quot;This is a book by &#123;author.title()&#125;.&quot;)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>调用函数：</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f&#x27;2 + 2 = &#123;(lambda x: x + x)(2)&#125;&#x27;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Polymorphic-Functions–-多态函数"><a href="#Polymorphic-Functions–-多态函数" class="headerlink" title="Polymorphic Functions– 多态函数"></a><strong>Polymorphic Functions– 多态函数</strong></h3><p>多态（英语：Polymorphism），是指面向对象程序运行时，相同的消息可能会送给多个不同的类之对象，<br>而系统可依据对象所属类，引发对应类的方法，而有不同的行为。<br>简单来说，所谓多态意指相同的消息给予不同的对象会引发不同的动作称之。<br>在面向对象程序设计中，多态一般指子类型多态（Subtype polymorphism）。</p>
+<blockquote>
+<p>str and repr are both polymorphic</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; half.__repr__()</span><br><span class="line">&#x27;Fraction(1, 2)&#x27;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; half.__str__()</span><br><span class="line">&#x27;1/2&#x27;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Interfaces-–接口"><a href="#Interfaces-–接口" class="headerlink" title="Interfaces –接口"></a><strong>Interfaces</strong> –接口</h3><blockquote>
+<p><em>Message passing</em>: Object interact by looking up attributes on each other</p>
+</blockquote>
+<p>语言的机制是查找属性和方法，这就是传递消息的概念。属性查找规则是以一种特殊的方式设计的，它们允许不同的数据类型通过相同属性名称来响应相同的消息。</p>
+<p>共享消息，即存在于许多不同类上并引起这些不同类相同行为的属性名称，是一种强大的抽象方法。</p>
+<p>一个接口是一组共享的消息和一些规范，告诉你它们应该做什么，代表着什么。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Ratio:</span><br><span class="line">    def __init__(self, n, d):</span><br><span class="line">        self.numer = n</span><br><span class="line">        self.denom = d</span><br><span class="line"></span><br><span class="line">    def __repr__(self):</span><br><span class="line">        return &#x27;Ratio(&#123;0&#125;, &#123;1&#125;)&#x27;.format(self.numer, self.denom)</span><br><span class="line">    </span><br><span class="line">    def __str__(self):</span><br><span class="line">        return &#x27;&#123;0&#125;/&#123;1&#125;&#x27;.format(self.numer,self.denom)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; half = Ratio(1, 2)</span><br><span class="line">&gt;&gt;&gt; Print(half)</span><br><span class="line">1/2</span><br><span class="line">&gt;&gt;&gt; half</span><br><span class="line">Ratio(1, 2)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Special-Method-Name"><a href="#Special-Method-Name" class="headerlink" title="Special Method Name"></a><strong>Special Method Name</strong></h3><ul>
+<li>Certain names are special because they have built-in behavior</li>
+<li>These names always start and end with two underscores</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">__init__ #Method invoked automatically when an object is constructed</span><br><span class="line">__repr__ #Method invoked to display an objetc as a Python expression</span><br><span class="line">__add__  #Method invoked to add one object to another</span><br><span class="line">__bool__ #Method invoked to convert an object to True or False</span><br><span class="line">__float__ #Method invoked to convert an object to a float</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; zero, one, two = 0, 1, 2</span><br><span class="line">&gt;&gt;&gt; one.__add__(two)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; zero.__bool__(), one.__bool__()</span><br><span class="line">(False, True)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Part-16-Composition"><a href="#Part-16-Composition" class="headerlink" title="Part 16 Composition"></a>Part 16 Composition</h2>
       
       <!-- 增加版权声明 -->
 
@@ -287,7 +398,7 @@
         
         <br>
         <strong>本文链接：</strong>
-        <a rel="license" href="https://blog.visionary-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/">https://blog.visionary-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/</a>
+        <a rel="license" href="https://blog.visionary-5.top/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/">https://blog.visionary-5.top/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/</a>
         <br>
         <strong>版权声明：</strong>
         本作品采用
@@ -394,7 +505,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://visionary-5.github.iory-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://visionary-5.github.iory-5.top/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -439,7 +550,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-4"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (4)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-15-Inheritance-%E2%80%93%E7%BB%A7%E6%89%BF"><span class="toc-number">1.1.</span> <span class="toc-text">Part 15: Inheritance –继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Oriented-Design"><span class="toc-number">1.1.1.</span> <span class="toc-text">Object-Oriented Design</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-4"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (4)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-15-Inheritance-%E2%80%93%E7%BB%A7%E6%89%BF"><span class="toc-number">1.1.</span> <span class="toc-text">Part 15: Inheritance –继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Oriented-Design"><span class="toc-number">1.1.1.</span> <span class="toc-text">Object-Oriented Design</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Attributes-Lookup-Practice"><span class="toc-number">1.1.2.</span> <span class="toc-text">Attributes Lookup Practice</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Multiple-Inheritance"><span class="toc-number">1.2.</span> <span class="toc-text">Multiple Inheritance</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part16-Representations"><span class="toc-number">1.3.</span> <span class="toc-text">Part16: Representations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-Representations"><span class="toc-number">1.3.1.</span> <span class="toc-text">String Representations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F-String"><span class="toc-number">1.3.2.</span> <span class="toc-text">F-String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Polymorphic-Functions%E2%80%93-%E5%A4%9A%E6%80%81%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.3.</span> <span class="toc-text">Polymorphic Functions– 多态函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interfaces-%E2%80%93%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.4.</span> <span class="toc-text">Interfaces –接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-Method-Name"><span class="toc-number">1.3.5.</span> <span class="toc-text">Special Method Name</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-16-Composition"><span class="toc-number">1.4.</span> <span class="toc-text">Part 16 Composition</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
