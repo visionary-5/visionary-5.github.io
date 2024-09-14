@@ -12,12 +12,12 @@
   <meta name="description" content="UC Berkeley CS61a自学历程和学习总结 (4)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS61a编程语言课自学历程————UC Berkeley(4)">
-<meta property="og:url" content="https://blog.visionary-5.top/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/index.html">
+<meta property="og:url" content="https://blog.visionary-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/index.html">
 <meta property="og:site_name" content="Arua&#39;s blog">
 <meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结 (4)">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-09-13T11:30:30.000Z">
-<meta property="article:modified_time" content="2024-09-13T10:52:38.714Z">
+<meta property="article:published_time" content="2024-09-11T11:30:30.000Z">
+<meta property="article:modified_time" content="2024-09-14T08:16:48.386Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -89,8 +89,6 @@
 		        
 					<a class="qq" target="_blank" href="/assets/qq.png" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="weixin" target="_blank" href="/assets/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
-		        
 					<a class="mail" target="_blank" href="mailto:3314591463@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
@@ -130,8 +128,6 @@
 						<a class="zhihu" target="_blank" href="/assets/zhihu.png" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 						<a class="qq" target="_blank" href="/assets/qq.png" title="qq"><i class="icon-qq"></i></a>
-			        
-						<a class="weixin" target="_blank" href="/assets/wechat.png" title="weixin"><i class="icon-weixin"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:3314591463@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -191,8 +187,8 @@
     
 
     
-      <a href="/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" class="archive-article-date">
-  	<time datetime="2024-09-13T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-13</time>
+      <a href="/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" class="archive-article-date">
+  	<time datetime="2024-09-11T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-11</time>
 </a>
     
 
@@ -358,15 +354,210 @@
 
 <hr>
 <h3 id="Special-Method-Name"><a href="#Special-Method-Name" class="headerlink" title="Special Method Name"></a><strong>Special Method Name</strong></h3><ul>
-<li>Certain names are special because they have built-in behavior</li>
-<li>These names always start and end with two underscores</li>
+<li><p>Certain names are special because they have built-in behavior</p>
+</li>
+<li><p>These names always start and end with two underscores</p>
+</li>
+<li><p><code>__init__</code>  Method invoked automatically when an object is constructed</p>
+</li>
+<li><p><code>__repr__</code>  Method invoked to display an objetc as a Python expression</p>
+</li>
+<li><p><code>__add__  </code> Method invoked to add one object to another</p>
+</li>
+<li><p><code>__bool__</code>  Method invoked to convert an object to True or False</p>
+</li>
+<li><p><code>__float__</code> Method invoked to convert an object to a float</p>
+</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">__init__ #Method invoked automatically when an object is constructed</span><br><span class="line">__repr__ #Method invoked to display an objetc as a Python expression</span><br><span class="line">__add__  #Method invoked to add one object to another</span><br><span class="line">__bool__ #Method invoked to convert an object to True or False</span><br><span class="line">__float__ #Method invoked to convert an object to a float</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; zero, one, two = 0, 1, 2</span><br><span class="line">&gt;&gt;&gt; one.__add__(two)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; zero.__bool__(), one.__bool__()</span><br><span class="line">(False, True)</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="Part-17-Composition"><a href="#Part-17-Composition" class="headerlink" title="Part 17 Composition"></a>Part 17 Composition</h2>
+<h2 id="Part-17-Composition"><a href="#Part-17-Composition" class="headerlink" title="Part 17 Composition"></a>Part 17 Composition</h2><h3 id="Linked-Lists"><a href="#Linked-Lists" class="headerlink" title="Linked Lists"></a><strong>Linked Lists</strong></h3><blockquote>
+<p>Linked list Structure</p>
+</blockquote>
+<ul>
+<li>A linked list is either empty or a first value and the rest of the linked list.</li>
+</ul>
+<p>链表 (Linked List) 由两个部分组成：第一个元素和链表剩下的部分。而剩下的这部分链表它本身就是个链表，这就是链表的递归定义法。其中，一个比较特殊的情况是空链表——他没有第一个元素和剩下的部分。</p>
+<p>链表是一种序列 (sequence)：它具有有限的长度并且支持通过索引选择元素。</p>
+<p>现在我们可以实现具有相同行为的类。在现在这个版本中，我们将使用专用方法名来定义它的行为，专用方法允许我们的类可以使用 Python 内置的 len 函数和元素选择操作符（方括号或 operator.getitem ）。这些内置函数将调用类的专用方法：长度由 <code>__len__</code> 计算，元素选择由 <code>__getitem__</code> 计算。空链表由一个长度为 0 且没有元素的空元组表示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class Link:</span><br><span class="line">        &quot;&quot;&quot;一个链表&quot;&quot;&quot;</span><br><span class="line">        empty = ()</span><br><span class="line">        def __init__(self, first, rest=()):</span><br><span class="line">            assert rest == Link.empty or isinstance(rest, Link)</span><br><span class="line">            self.first = first</span><br><span class="line">            self.rest = rest</span><br><span class="line">        def __getitem__(self, i):</span><br><span class="line">            if i == 0:</span><br><span class="line">                return self.first</span><br><span class="line">            else:</span><br><span class="line">                return self.rest[i-1]</span><br><span class="line">        def __len__(self):</span><br><span class="line">            return 1 + len(self.rest)</span><br><span class="line">&gt;&gt;&gt; s = Link(3, Link(4, Link(5)))</span><br><span class="line">&gt;&gt;&gt; len(s)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; s[1]</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<p>以上的 <code>__len__</code> 和 <code>__getitem__</code> 的定义都是递归的。Python 的内置函数 len 在它接收属于用户定义的类的实例时调用了<code>__len__</code>方法。类似地，元素选择操作符则会调用 <code>__getitem__ </code>方法。因此，这两个方法定义的主体中都会间接的调用他们自己。对于 <strong>len</strong> 来说，基线条件 (base case) 就是当 self.rest 计算得到一个空元组，也就是 Link.empty 时，此时长度为 0。</p>
+<p>内置的 isinstance 函数返回第一个参数的类型是否属于或者继承自第二个参数。isinstance(rest, Link) 在 rest 是 Link 的实例或 Link 的子类的实例时为 True。</p>
+<p>我们对于链表的类定义已经很完备了，但是现在我们还无法直观地看到 Link 的实例。为了方便之后的调试工作，我们再定义一个函数去将一个 Link 实例转换为一个字符串表达式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def link_expression(s):</span><br><span class="line">        &quot;&quot;&quot;返回一个可以计算得到 s 的字符串表达式。&quot;&quot;&quot;</span><br><span class="line">        if s.rest is Link.empty:</span><br><span class="line">            rest = &#x27;&#x27;</span><br><span class="line">        else:</span><br><span class="line">            rest = &#x27;, &#x27; + link_expression(s.rest)</span><br><span class="line">        return &#x27;Link(&#123;0&#125;&#123;1&#125;)&#x27;.format(s.first, rest)</span><br><span class="line">&gt;&gt;&gt; link_expression(s)</span><br><span class="line">&#x27;Link(3, Link(4, Link(5)))&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>用这个方法去展示一个链表实在是太方便了，以至于我想在任何需要展示一个 Link 的实例的时候都用上它。为了达到这个美好愿景，我们可以将函数 link_expression 作为专用方法 <code>__repr__</code> 的值。Python 在展示一个用户定义的类的实例时，会调用它们的 <code>__repr__</code>方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; Link.__repr__ = link_expression</span><br><span class="line">&gt;&gt;&gt; s</span><br><span class="line">Link(3, Link(4, Link(5)))</span><br></pre></td></tr></table></figure>
+
+<p>ink 类具有闭包性质 (closure property)。就像列表的元素可以是列表一样，一个 Link 实例的第一个元素也可以是一个 Link 实例。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s_first = Link(s, Link(6))</span><br><span class="line">&gt;&gt;&gt; s_first</span><br><span class="line">Link(Link(3, Link(4, Link(5))), Link(6))</span><br></pre></td></tr></table></figure>
+
+<p>链表 s_first 只有两个元素，但它的第一个元素是一个有着三个元素的链表。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; len(s_first)</span><br><span class="line">2</span><br><span class="line">&gt;&gt;&gt; len(s_first[0])</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; s_first[0][2]</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+
+<p><strong>递归函数特别适合操作链表。</strong>(以下所有函数均在列表类中编写！)</p>
+<p>首先我们写一个range_link函数，来返回一个范围内的链表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def range_link(start, end):</span><br><span class="line">    &quot;&quot;&quot;Return a Link containing consecutive integers from start to end.</span><br><span class="line"></span><br><span class="line">    &gt;&gt;&gt; range_link(3, 6)</span><br><span class="line">    Link(3, Link(4, Link(5)))</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    if start &gt;= end:</span><br><span class="line">        return Link.empty</span><br><span class="line">    else:</span><br><span class="line">        return Link(start, range_link(start + 1, end))</span><br></pre></td></tr></table></figure>
+
+<p>递归函数 extend_link 建立了一个新的链表，这个新链表是由链表 s 和其后边跟着的链表 t 组成的。将这个函数作为 Link 类的方法 <strong>add</strong> 就可以仿真内置列表的加法运算。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def extend_link(s, t):</span><br><span class="line">        if s is Link.empty:</span><br><span class="line">            return t</span><br><span class="line">        else:</span><br><span class="line">            return Link(s.first, extend_link(s.rest, t))</span><br><span class="line">&gt;&gt;&gt; extend_link(s, s)</span><br><span class="line">Link(3, Link(4, Link(5, Link(3, Link(4, Link(5))))))</span><br><span class="line">&gt;&gt;&gt; Link.__add__ = extend_link</span><br><span class="line">&gt;&gt;&gt; s + s</span><br><span class="line">Link(3, Link(4, Link(5, Link(3, Link(4, Link(5))))))</span><br></pre></td></tr></table></figure>
+
+<p>想要实现列表推导式 (List Comprehensions)，也就是从一个链表生成另一个链表，我们需要两个高阶函数：map_link 和 filter_link。其中 map_link 将函数 f 应用到链表 s 的每个元素，并将结果构造成一个新的链表。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def map_link(f, s):</span><br><span class="line">        if s is Link.empty:</span><br><span class="line">            return s</span><br><span class="line">        else:</span><br><span class="line">            return Link(f(s.first), map_link(f, s.rest))</span><br><span class="line">&gt;&gt;&gt; map_link(square, s)</span><br><span class="line">Link(9, Link(16, Link(25)))</span><br></pre></td></tr></table></figure>
+
+<p>函数 filter_link 返回了一个链表，这个链表过滤掉了原链表 s 中使函数 f 不返回真的元素，留下了其余的元素。通过组合使用 map_link 和 filter_link，我们可以达到和列表推导式相同的逻辑过程和结果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def filter_link(f, s):</span><br><span class="line">        if s is Link.empty:</span><br><span class="line">            return s</span><br><span class="line">        else:</span><br><span class="line">            filtered = filter_link(f, s.rest)</span><br><span class="line">            if f(s.first):</span><br><span class="line">                return Link(s.first, filtered)</span><br><span class="line">            else:</span><br><span class="line">                return filtered</span><br><span class="line">&gt;&gt;&gt; odd = lambda x: x % 2 == 1</span><br><span class="line">&gt;&gt;&gt; map_link(square, filter_link(odd, s))</span><br><span class="line">Link(9, Link(25))</span><br><span class="line">&gt;&gt;&gt; [square(x) for x in [3, 4, 5] if odd(x)]</span><br><span class="line">[9, 25]</span><br></pre></td></tr></table></figure>
+
+<p>函数 join_link 递归的构造了一个 包含着所有在链表里的元素，并且这些元素被字符串 separator 分开 的字符串。这个结果相较于 link_expression 来说就更加简练。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def join_link(s, separator):</span><br><span class="line">        if s is Link.empty:</span><br><span class="line">            return &quot;&quot;</span><br><span class="line">        elif s.rest is Link.empty:</span><br><span class="line">            return str(s.first)</span><br><span class="line">        else:</span><br><span class="line">            return str(s.first) + separator + join_link(s.rest, separator)</span><br><span class="line">&gt;&gt;&gt; join_link(s, &quot;, &quot;)</span><br><span class="line">&#x27;3, 4, 5&#x27;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Linked Lists Can Change</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = Link(1, Link(2, Link(3)))</span><br><span class="line">&gt;&gt;&gt; s.first = 5</span><br><span class="line">&gt;&gt;&gt; t = s.rest</span><br><span class="line">&gt;&gt;&gt; t.rest = s</span><br><span class="line">&gt;&gt;&gt; s.first</span><br><span class="line">5</span><br><span class="line">&gt;&gt;&gt; s.rest.rest.rest.rest.rest.first</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<p>这个例子为我们展示链表元素被改变的一个实例。第一次看可能会被这种操作搞得眼花缭乱，我个人习惯是对于链表，是画个图，看到赋值语句，从左到右读，把左边的元素指向右边元素的储存单元，这样就不会弄混了。</p>
+<hr>
+<h3 id="Recursive-Construction"><a href="#Recursive-Construction" class="headerlink" title="Recursive Construction"></a><strong>Recursive Construction</strong></h3><p>当以增量方式构造序列时，链表特别有用，这种情况在递归计算中经常出现</p>
+<p>第一章我们介绍过的函数 count_partitions 通过树递归计算了使用大小最大为 m 的数对整数 n 进行分区的方法的个数。通过序列，我们还可以使用类似的过程显式枚举这些分区。</p>
+<p>与计数方法个数的方法相同，我们利用相同的递归统计方法：将一个数 n 在最大数限制为 m 下分区包含两种情况：</p>
+<p>用 m 及以内的整数划分 n-m<br>用 m-1 及以内的整数划分 n<br>对于基线情况，我们知道 0 只有一个分区方法，而划分一个负整数或使用小于 1 的数划分是不可能的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def partitions(n, m):</span><br><span class="line">        &quot;&quot;&quot;Return a linked list of partitions of n using parts of up to m.</span><br><span class="line">        Each partition is represented as a linked list.</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        if n == 0:</span><br><span class="line">            return Link(Link.empty) # A list containing the empty partition</span><br><span class="line">        elif n &lt; 0 or m == 0:</span><br><span class="line">            return Link.empty</span><br><span class="line">        else:</span><br><span class="line">            using_m = partitions(n-m, m)</span><br><span class="line">            with_m = map_link(lambda s: Link(m, s), using_m)</span><br><span class="line">            without_m = partitions(n, m-1)</span><br><span class="line">            return with_m + without_m</span><br></pre></td></tr></table></figure>
+
+<p>在递归情况下，我们构造两个分区子列表。第一个使用 m，因此我们将 m 添加到 using_m 的结果的每个元素中以形成 with_m。</p>
+<p>分区的结果是高度嵌套的：是一个链表的链表。使用带有适当分隔符的 join_link，我们可以以易读的方式显示各个分区。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def print_partitions(n, m):</span><br><span class="line">        lists = partitions(n, m)</span><br><span class="line">        strings = map_link(lambda s: join_link(s, &quot; + &quot;), lists)</span><br><span class="line">        print(join_link(strings, &quot;\n&quot;))</span><br><span class="line">&gt;&gt;&gt; print_partitions(6, 4)</span><br><span class="line">4 + 2</span><br><span class="line">4 + 1 + 1</span><br><span class="line">3 + 3</span><br><span class="line">3 + 2 + 1</span><br><span class="line">3 + 1 + 1 + 1</span><br><span class="line">2 + 2 + 2</span><br><span class="line">2 + 2 + 1 + 1</span><br><span class="line">2 + 1 + 1 + 1 + 1</span><br><span class="line">1 + 1 + 1 + 1 + 1 + 1</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Linked-List-Mutation-Example"><a href="#Linked-List-Mutation-Example" class="headerlink" title="Linked List Mutation Example"></a><strong>Linked List Mutation Example</strong></h3><blockquote>
+<p>Adding to an Ordered List</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def add(s, v):</span><br><span class="line">    &quot;&quot;&quot;Add v to an ordered list s with no repeats, returning modified s.&quot;&quot;&quot;</span><br><span class="line">    (Note: If v is already in s, then don&#x27;t modify s, but still return it.)</span><br><span class="line"></span><br><span class="line">    assert s is not List.empty</span><br><span class="line">    if s.first &gt; v:</span><br><span class="line">        s.first, s.rest = v, Link(s.first, s.rest)</span><br><span class="line">    elif s.first &lt; v and empty(s.rest):</span><br><span class="line">        s.rest =  Link(v)</span><br><span class="line">    elif s.first &lt; v:</span><br><span class="line">        add(s.rest, v)</span><br><span class="line">    return s</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Tree-Class"><a href="#Tree-Class" class="headerlink" title="Tree Class"></a><strong>Tree Class</strong></h3><p>树是另外一个递归计算的数据结构，我们其实已经单独花了一个部分来讲Tree了，但是树实在是太过于重要了，我们需要再次谈论它。</p>
+<p>树也可以用用户定义的类的实例来表示，而不是内置序列类型的嵌套实例。树是具有 作为属性的分支序列 的任何数据结构，同时，这些分支序列也是树。</p>
+<p>内部值在树中称为 label。下面的 Tree 类就表示这样的树，其中每棵树都有一系列分支，这些分支也是树。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class Tree:</span><br><span class="line">        def __init__(self, label, branches=()):</span><br><span class="line">            self.label = label</span><br><span class="line">            for branch in branches:</span><br><span class="line">                assert isinstance(branch, Tree)</span><br><span class="line">            self.branches = branches</span><br><span class="line">        def __repr__(self):</span><br><span class="line">            if self.branches:</span><br><span class="line">                return &#x27;Tree(&#123;0&#125;, &#123;1&#125;)&#x27;.format(self.label, repr(self.branches))</span><br><span class="line">            else:</span><br><span class="line">                return &#x27;Tree(&#123;0&#125;)&#x27;.format(repr(self.label))</span><br><span class="line">        def is_leaf(self):</span><br><span class="line">            return not self.branches</span><br></pre></td></tr></table></figure>
+
+<p>简单解释一下<br>Tree 类用来创建一个树结构，label 表示节点的值，branches 表示节点的分支，分支也是 Tree 对象。</p>
+<p><code>__repr__</code> 方法用于显示树的结构。</p>
+<p>is_leaf 用来检查当前节点是否为叶子节点（没有子节点）。</p>
+<p>例如，Tree 类可以表示 <strong>用于计算斐波那契数的函数 fib</strong> 的 递归表达式树 中计算的值。下面的函数 fib_tree(n) 返回一个 Tree 的实例，该实例以第 n 个斐波那契数作为其 label，并在其分支中跟踪所有先前计算的斐波那契数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def fib_tree(n):</span><br><span class="line">        if n == 1:</span><br><span class="line">            return Tree(0)</span><br><span class="line">        elif n == 2:</span><br><span class="line">            return Tree(1)</span><br><span class="line">        else:</span><br><span class="line">            left = fib_tree(n-2)</span><br><span class="line">            right = fib_tree(n-1)</span><br><span class="line">            return Tree(left.label + right.label, (left, right))</span><br><span class="line">&gt;&gt;&gt; fib_tree(5)</span><br><span class="line">Tree(3, (Tree(1, (Tree(0), Tree(1))), Tree(2, (Tree(1), Tree(1, (Tree(0), Tree(1)))))))</span><br></pre></td></tr></table></figure>
+
+<p>并且，Tree 类的实例也可以用递归函数进行处理。例如，我们可以对树的 label 求和。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def sum_labels(t):</span><br><span class="line">        &quot;&quot;&quot;对树的 label 求和，可能得到 None。&quot;&quot;&quot;</span><br><span class="line">        return t.label + sum([sum_labels(b) for b in t.branches])</span><br><span class="line">&gt;&gt;&gt; sum_labels(fib_tree(5))</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+
+<p>我们也可以用 memo 去构造一个斐波那契树。有了它，重复的子树只会被记忆版本的 fib_tree 创建一次，然后在不同大小的树中被用作分支很多次。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; fib_tree = memo(fib_tree)</span><br><span class="line">&gt;&gt;&gt; big_fib_tree = fib_tree(35)</span><br><span class="line">&gt;&gt;&gt; big_fib_tree.label</span><br><span class="line">5702887</span><br><span class="line">&gt;&gt;&gt; big_fib_tree.branches[0] is big_fib_tree.branches[1].branches[1]</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; sum_labels = memo(sum_labels)</span><br><span class="line">&gt;&gt;&gt; sum_labels(big_fib_tree)</span><br><span class="line">142587180</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Part-18-Efficiency"><a href="#Part-18-Efficiency" class="headerlink" title="Part 18: Efficiency"></a>Part 18: Efficiency</h2><h3 id="Measuring-Efficency-–测量效率"><a href="#Measuring-Efficency-–测量效率" class="headerlink" title="Measuring Efficency –测量效率"></a><strong>Measuring Efficency –测量效率</strong></h3><p>测量程序运行所需的时间或消耗的内存确切值是具有挑战性的，因为结果取决于计算机配置的许多细节。更可靠地表征程序的效率的方法是测量某些事件发生的次数，例如函数调用次数。</p>
+<p>我们第一个树递归的例子，是使用树递归来计算斐波那契数列元素的方法。采用以下实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def fib(n):</span><br><span class="line">        if n == 0:</span><br><span class="line">            return 0</span><br><span class="line">        elif n == 1:</span><br><span class="line">            return 1</span><br><span class="line">        else:</span><br><span class="line">            return fib(n - 2) + fib(n - 1)</span><br><span class="line">&gt;&gt;&gt; fib(5)</span><br><span class="line">5</span><br></pre></td></tr></table></figure>
+
+<p>考虑计算 fib(6) 时的计算模式，如下所示，为了计算 fib(5)，我们计算 fib(3) 和 fib(4)。而要计算 fib(3)，我们需要计算 fib(1) 和 fib(2)。</p>
+<p>这个函数作为一个典型的树递归函数具有教学意义，但它是计算斐波那契数的一种极其低效的方式，因为它进行了大量的冗余计算。计算 fib(3) 的整个过程被重复执行。</p>
+<p>我们可以测量这种低效性。这个高阶的 count 函数返回一个与其参数等效的函数，并且还维护一个 call_count 属性。通过这种方式，我们可以检查 fib 函数被调用的次数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def count(f):</span><br><span class="line">        def counted(n):</span><br><span class="line">            counted.call_count += 1</span><br><span class="line">            return f(n)</span><br><span class="line">        counted.call_count = 0</span><br><span class="line">        return counted</span><br></pre></td></tr></table></figure>
+
+<p>简单解释一下这个函数的实施吧：</p>
+<ul>
+<li><p>count(f) 是一个装饰器，接收一个函数 f 作为参数。</p>
+</li>
+<li><p>在 count 内部定义了一个嵌套函数 counted(n)，每次调用 counted(n)，都会执行 counted.call_count +&#x3D; 1，即自增计数器。</p>
+</li>
+<li><p>counted.call_count &#x3D; 0 初始化了 call_count 这个属性。这里利用了 Python 函数对象的特性，可以为函数对象动态添加属性。</p>
+</li>
+<li><p>最后 count 函数返回的是 counted，这个闭包保存了传入的 f 函数，并且可以通过 counted.call_count 记录它的调用次数。</p>
+</li>
+</ul>
+<p>通过计算对 fib 函数的调用次数，我们可以发现所需的调用次数增长速度比斐波那契数列本身还要快。这种调用的快速增长是树递归函数的特征。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; fib = count(fib)</span><br><span class="line">&gt;&gt;&gt; fib(19)</span><br><span class="line">4181</span><br><span class="line">&gt;&gt;&gt; fib.call_count</span><br><span class="line">10946</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Memoization"><a href="#Memoization" class="headerlink" title="Memoization"></a><strong>Memoization</strong></h3><blockquote>
+<p>Memoization is an extremely useful technique for speeding up the running time of a program.</p>
+</blockquote>
+<p>Idea: Remember the results that have been computed before</p>
+<p>记忆化可以自然地表达为一个高阶函数，也可以用作装饰器。下面的定义创建了一个缓存（cache），用于存储先前计算过的结果，索引是它们计算所用的参数。使用字典作为缓存的数据结构要求被记忆化的函数的参数是不可变的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def memo(f):</span><br><span class="line">        cache = &#123;&#125;</span><br><span class="line">        def memorized(n):</span><br><span class="line">            if n not in cache:</span><br><span class="line">                cache[n] = f(n)</span><br><span class="line">            return cache[n]</span><br><span class="line">        return memorized</span><br></pre></td></tr></table></figure>
+
+<p>通过使用 count 函数，我们可以看到对于每个唯一的输入，fib 函数实际上只被调用一次。核心就在于我存储了我计算过的内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; counted_fib = count(fib)</span><br><span class="line">&gt;&gt;&gt; fib =memo(count_fib)</span><br><span class="line">&gt;&gt;&gt; fib(19)</span><br><span class="line">4181</span><br><span class="line">&gt;&gt;&gt; counted_fib.call_count</span><br><span class="line">20</span><br><span class="line">&gt;&gt;&gt; fib(34)</span><br><span class="line">5702887</span><br><span class="line">&gt;&gt;&gt; counted_fib.call_count</span><br><span class="line">35</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Exponentiation–取幂"><a href="#Exponentiation–取幂" class="headerlink" title="Exponentiation–取幂"></a><strong>Exponentiation–取幂</strong></h3><blockquote>
+<p>Linear time(线性时间):</p>
+</blockquote>
+<ul>
+<li>Doubling the input doubles the time</li>
+<li>1024x the input takes 1024x as much time</li>
+</ul>
+<blockquote>
+<p>Logarithmic time(对数时间):</p>
+</blockquote>
+<ul>
+<li>Doubling the input increases the time by a constant C</li>
+<li>1024x the input increases the time by only 10 times C</li>
+</ul>
+<p>比如我们要计算一个数的幂方，以下分别呈现两种效率的函数实现方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def exp(b, n):</span><br><span class="line">    if n == 0:</span><br><span class="line">        return 1</span><br><span class="line">    else:</span><br><span class="line">        return b * exp(b, n-1)</span><br><span class="line"></span><br><span class="line">def exp_fast(b, n):</span><br><span class="line">    if n == 0:</span><br><span class="line">        return 1</span><br><span class="line">    elif n % 2 == 0:</span><br><span class="line">        return square(exp_fast(b, n//2))</span><br><span class="line">    else:</span><br><span class="line">        return b * exp_fast(b, n-1)</span><br><span class="line"></span><br><span class="line">def square(x)</span><br><span class="line">    return x * x</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="Order-of-Growth-Notation"><a href="#Order-of-Growth-Notation" class="headerlink" title="Order of Growth Notation"></a><strong>Order of Growth Notation</strong></h3><p>增长阶是为了简化计算过程的分析和比较而设计的。许多不同的计算过程可以具有等效的增长阶，这表示它们的增长方式相似。对于计算机科学家来说，了解和识别常见的增长阶并确定具有相同增长阶的过程是一项重要的技能。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>$\Theta$表示</th>
+<th>增长阶描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>常数</td>
+<td>$\Theta(1)$</td>
+<td>增长与输入无关</td>
+<td><code>abs</code>（绝对值函数）</td>
+</tr>
+<tr>
+<td>对数</td>
+<td>$\Theta(\log_{n})$</td>
+<td>增长与输入规模的对数成正比</td>
+<td><code>binary search</code>（二分查找）</td>
+</tr>
+<tr>
+<td>线性</td>
+<td>$\Theta(n)$</td>
+<td>随着输入的递增，计算过程所需的资源成比例增长</td>
+<td><code>for loop</code>（线性循环）</td>
+</tr>
+<tr>
+<td>平方</td>
+<td>$\Theta(n^2)$</td>
+<td>随着输入的递增，计算过程所需的资源增加为输入的平方</td>
+<td><code>矩阵乘法</code></td>
+</tr>
+<tr>
+<td>指数</td>
+<td>$\Theta(2^n)$</td>
+<td>随着输入的递增，计算过程所需的资源成倍增长</td>
+<td><code>fib</code>（递归斐波那契）</td>
+</tr>
+</tbody></table>
+<h3 id="Space"><a href="#Space" class="headerlink" title="Space"></a><strong>Space</strong></h3><blockquote>
+<p>Which environment frames do we need to keep during evaluation?</p>
+</blockquote>
+<p>空间。要了解函数的空间需求，我们通常必须指定在计算的环境模型中如何使用、保留和回收内存。在计算表达式时，解释器会保存所有活动的环境，以及这些环境引用的所有值和帧。我们称一个环境是活动的，如果它为正在计算的某个表达式提供了评估上下文。每当为其创建第一个帧的函数调用最终返回时，环境将变为非活动状态。</p>
+<p>例如，在计算 fib 时，解释器按照之前显示的顺序计算每个值，遍历树的结构。为此，它只需要跟踪在计算的任何时刻位于当前节点上方的那些节点。用于计算其他分支的内存可以被回收，因为它不会影响未来的计算。总的来说，树递归函数所需的空间将与树的最大深度成比例。</p>
+<p>高阶函数 count_frames 用于跟踪尚未返回的函数调用次数 open_count 。它通过在计算过程中记录当前活动的函数调用次数来实现。max_count 属性是 open_count 曾经达到的最大值，它对应于在计算过程中同时处于活动状态的最大帧数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def count_frames(f):</span><br><span class="line">        def counted(n):</span><br><span class="line">            counted.open_count += 1</span><br><span class="line">            counted.max_count = max(counted.max_count, counted.open_count)</span><br><span class="line">            result = f(n)</span><br><span class="line">            counted.open_count -= 1</span><br><span class="line">            return result</span><br><span class="line">        counted.open_count = 0</span><br><span class="line">        counted.max_count = 0</span><br><span class="line">        return counted</span><br><span class="line">&gt;&gt;&gt; fib = count_frames(fib)</span><br><span class="line">&gt;&gt;&gt; fib(19)</span><br><span class="line">4181</span><br><span class="line">&gt;&gt;&gt; fib.open_count</span><br><span class="line">0</span><br><span class="line">&gt;&gt;&gt; fib.max_count</span><br><span class="line">19</span><br><span class="line">&gt;&gt;&gt; fib(24)</span><br><span class="line">46368</span><br><span class="line">&gt;&gt;&gt; fib.max_count</span><br><span class="line">24</span><br></pre></td></tr></table></figure>
+
+<p>总结一下， fib 函数的空间要求（以活动帧数衡量）比输入小一个单位，这往往是较小的。</p>
+
       
       <!-- 增加版权声明 -->
 
@@ -400,7 +591,7 @@
         
         <br>
         <strong>本文链接：</strong>
-        <a rel="license" href="https://blog.visionary-5.top/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/">https://blog.visionary-5.top/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/</a>
+        <a rel="license" href="https://blog.visionary-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/">https://blog.visionary-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/</a>
         <br>
         <strong>版权声明：</strong>
         本作品采用
@@ -507,7 +698,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://visionary-5.github.iory-5.top/2024/09/13/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://visionary-5.github.iory-5.top/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -521,6 +712,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2024/09/14/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(5)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CS61a编程语言课自学历程————UC Berkeley(5)
+        
+      </div>
+    </a>
   
   
     <a href="/2024/09/10/%E5%85%B3%E4%BA%8E%E6%88%91%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%BF%98%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9C%A8github%20page%E4%B8%8A%E8%BF%99%E4%BB%B6%E4%BA%8B/" id="article-nav-older" class="article-nav-link-wrap">
@@ -552,7 +752,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-4"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (4)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-15-Inheritance-%E2%80%93%E7%BB%A7%E6%89%BF"><span class="toc-number">1.1.</span> <span class="toc-text">Part 15: Inheritance –继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Oriented-Design"><span class="toc-number">1.1.1.</span> <span class="toc-text">Object-Oriented Design</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Attributes-Lookup-Practice"><span class="toc-number">1.1.2.</span> <span class="toc-text">Attributes Lookup Practice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multiple-Inheritance"><span class="toc-number">1.1.3.</span> <span class="toc-text">Multiple Inheritance</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part16-Representations"><span class="toc-number">1.2.</span> <span class="toc-text">Part16: Representations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-Representations"><span class="toc-number">1.2.1.</span> <span class="toc-text">String Representations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F-String"><span class="toc-number">1.2.2.</span> <span class="toc-text">F-String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Polymorphic-Functions%E2%80%93-%E5%A4%9A%E6%80%81%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text">Polymorphic Functions– 多态函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interfaces-%E2%80%93%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.2.4.</span> <span class="toc-text">Interfaces –接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-Method-Name"><span class="toc-number">1.2.5.</span> <span class="toc-text">Special Method Name</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-17-Composition"><span class="toc-number">1.3.</span> <span class="toc-text">Part 17 Composition</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UC-Berkeley-CS61a%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B%E5%92%8C%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93-4"><span class="toc-number">1.</span> <span class="toc-text">UC Berkeley CS61a自学历程和学习总结 (4)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-15-Inheritance-%E2%80%93%E7%BB%A7%E6%89%BF"><span class="toc-number">1.1.</span> <span class="toc-text">Part 15: Inheritance –继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Oriented-Design"><span class="toc-number">1.1.1.</span> <span class="toc-text">Object-Oriented Design</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Attributes-Lookup-Practice"><span class="toc-number">1.1.2.</span> <span class="toc-text">Attributes Lookup Practice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multiple-Inheritance"><span class="toc-number">1.1.3.</span> <span class="toc-text">Multiple Inheritance</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part16-Representations"><span class="toc-number">1.2.</span> <span class="toc-text">Part16: Representations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-Representations"><span class="toc-number">1.2.1.</span> <span class="toc-text">String Representations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F-String"><span class="toc-number">1.2.2.</span> <span class="toc-text">F-String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Polymorphic-Functions%E2%80%93-%E5%A4%9A%E6%80%81%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.3.</span> <span class="toc-text">Polymorphic Functions– 多态函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interfaces-%E2%80%93%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.2.4.</span> <span class="toc-text">Interfaces –接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-Method-Name"><span class="toc-number">1.2.5.</span> <span class="toc-text">Special Method Name</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-17-Composition"><span class="toc-number">1.3.</span> <span class="toc-text">Part 17 Composition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linked-Lists"><span class="toc-number">1.3.1.</span> <span class="toc-text">Linked Lists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recursive-Construction"><span class="toc-number">1.3.2.</span> <span class="toc-text">Recursive Construction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linked-List-Mutation-Example"><span class="toc-number">1.3.3.</span> <span class="toc-text">Linked List Mutation Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tree-Class"><span class="toc-number">1.3.4.</span> <span class="toc-text">Tree Class</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Part-18-Efficiency"><span class="toc-number">1.4.</span> <span class="toc-text">Part 18: Efficiency</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Measuring-Efficency-%E2%80%93%E6%B5%8B%E9%87%8F%E6%95%88%E7%8E%87"><span class="toc-number">1.4.1.</span> <span class="toc-text">Measuring Efficency –测量效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memoization"><span class="toc-number">1.4.2.</span> <span class="toc-text">Memoization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exponentiation%E2%80%93%E5%8F%96%E5%B9%82"><span class="toc-number">1.4.3.</span> <span class="toc-text">Exponentiation–取幂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Order-of-Growth-Notation"><span class="toc-number">1.4.4.</span> <span class="toc-text">Order of Growth Notation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Space"><span class="toc-number">1.4.5.</span> <span class="toc-text">Space</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -752,27 +952,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://www.zhihu.com/people/83-95-81-59" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>知乎个人主页</a>
             </li>
           
         </ul>
@@ -791,7 +971,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           </script>
         </span>
       </p>
-      <p id="js-aboutme" style="margin:0 20px 0 20px;">人世间的喜怒悲欢本就不相通，难过怎么说得清楚，失落又怎能感同身受？</P>
+      <p id="js-aboutme" style="margin:0 20px 0 20px;">关于理想和信仰，我们谈论得越来越少，不管怎样，希望能做一个有想法的大人。</P>
     </div>
   </div>
     
