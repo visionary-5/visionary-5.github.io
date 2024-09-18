@@ -7,15 +7,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.visionary-5.top">
-  <title>Archives: 2024/9 | Arua&#39;s blog</title>
+  <title>vscode配置Scheme环境（window系统） | Arua&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="share my learning experience">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Arua&#39;s blog">
-<meta property="og:url" content="https://blog.visionary-5.top/archives/2024/09/index.html">
+  <meta name="description" content="vscode配置Scheme环境（window系统）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode配置Scheme环境（window系统）">
+<meta property="og:url" content="https://blog.visionary-5.top/2024/09/18/vscode%E9%85%8D%E7%BD%AEScheme%E7%8E%AF%E5%A2%83/index.html">
 <meta property="og:site_name" content="Arua&#39;s blog">
-<meta property="og:description" content="share my learning experience">
+<meta property="og:description" content="vscode配置Scheme环境（window系统）">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-09-18T05:49:21.752Z">
+<meta property="article:modified_time" content="2024-09-18T06:11:57.896Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -156,156 +158,285 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-vscode配置Scheme环境" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <!--
   
+    <h1 class="article-title" itemprop="name">
+      vscode配置Scheme环境（window系统）
+    </h1>
   
+-->
+        <!--显示阅读次数-->
+        
+          
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+            <span class="icon-sort"></span>
+            <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+              阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+            </span>
+          </a>
+      </header>
     
+
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/18/vscode%E9%85%8D%E7%BD%AEScheme%E7%8E%AF%E5%A2%83/" class="archive-article-date">
+      <a href="/2024/09/18/vscode%E9%85%8D%E7%BD%AEScheme%E7%8E%AF%E5%A2%83/" class="archive-article-date">
   	<time datetime="2024-09-18T05:49:21.752Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/18/vscode%E9%85%8D%E7%BD%AEScheme%E7%8E%AF%E5%A2%83/">vscode配置Scheme环境（window系统）</a>
-    </h1>
-  
+    
 
-        <div class="article-info info-on-right">
-          
-          
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="vscode配置Scheme环境（window系统）"><a href="#vscode配置Scheme环境（window系统）" class="headerlink" title="vscode配置Scheme环境（window系统）"></a>vscode配置Scheme环境（window系统）</h1><span id="more"></span>
+<hr>
+<h2 id="安装Scheme解释器"><a href="#安装Scheme解释器" class="headerlink" title="安装Scheme解释器"></a>安装Scheme解释器</h2><p><a target="_blank" rel="noopener" href="https://sourceforge.net/projects/chez-scheme.mirror/">Scheme 10.0.0</a></p>
+<p>这个包是比较稳定的，而且没有被墙</p>
+<hr>
+<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>安装Scheme后，配置环境变量，在Path中加入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files\Chez Scheme 10.0.0\bin\ta6nt</span><br></pre></td></tr></table></figure>
 
+<p>保存后在CMD中输入Scheme即可进入Scheme交互执行环境，检测是否配置正确</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\86157&gt;scheme</span><br><span class="line">Chez Scheme Version 10.0.0</span><br><span class="line">Copyright 1984-2024 Cisco Systems, Inc.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Vscode有关配置"><a href="#Vscode有关配置" class="headerlink" title="Vscode有关配置"></a>Vscode有关配置</h2><p>在拓展里下载两个插件，一个是Code Runner,一个是vscode-scheme</p>
+<p>Code Runner需要进行配置：(点击插件右下角的这个小齿轮，找到拓展设置，找到在setting.json编辑)</p>
+<p>然后找到这行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;code-runner.executorMapByFileExtension&quot;:</span><br></pre></td></tr></table></figure>
+
+<p>在后面一系列花括号的内容中添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;.ss&quot;: &quot;scheme&quot;</span><br></pre></td></tr></table></figure>
+
+<p>然后我们再找到这行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;code-runner.executorMap&quot;:</span><br></pre></td></tr></table></figure>
+
+<p>把原本的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;scheme&quot;:&quot;csi -script&quot;</span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;scheme&quot;: &quot;scheme&quot;,</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>可以新建一个后缀为.ss的文件，进行测试</p>
+<p>比如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">;; Hello World in Scheme</span><br><span class="line">(display &quot;Hello, World!&quot;)</span><br><span class="line">(newline)</span><br><span class="line"></span><br><span class="line">;; Define a simple function</span><br><span class="line">(define (square x)</span><br><span class="line">  (* x x))</span><br><span class="line"></span><br><span class="line">;; Test the function</span><br><span class="line">(display &quot;The square of 5 is: &quot;)</span><br><span class="line">(display (square 5))</span><br><span class="line">(newline)</span><br><span class="line"></span><br><span class="line">;; Conditional example</span><br><span class="line">(define (even-or-odd x)</span><br><span class="line">  (if (even? x)</span><br><span class="line">      (display &quot;Even&quot;)</span><br><span class="line">      (display &quot;Odd&quot;)))</span><br><span class="line"></span><br><span class="line">;; Test the conditional function</span><br><span class="line">(display &quot;7 is: &quot;)</span><br><span class="line">(even-or-odd 7)</span><br><span class="line">(newline)</span><br><span class="line"></span><br><span class="line">(exit)</span><br></pre></td></tr></table></figure>
+
+<p>输出为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Chez Scheme Version 10.0.0</span><br><span class="line">Copyright 1984-2024 Cisco Systems, Inc.</span><br><span class="line"></span><br><span class="line">Hello, World!</span><br><span class="line">The square of 5 is: 25</span><br><span class="line">7 is: Odd</span><br></pre></td></tr></table></figure>
+
+<p>表面环境已经搭建好了。</p>
+
+      
+      <!-- 增加版权声明 -->
+
+      <!- 文件结束 -->
+
+      
+        <div class="essayending">
+          <div>
+           <div style="text-align:center;color: #ccc;font-size:22px;">
+           <br/>
+           <br/>
+           -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+           <br/>
+           <br/>
+            <br/>
+            <br/>
+           </div>
+          </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+
+      <!- 文件结束 配置完成-->
+      
+      
+      
+      <div class="declare" hidden="hidden"></div>
+      
+
+      <!-- 增加版权声明结束 -->
+
+            
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+              <span class="tooltip-item">赏</span>
+              <span class="tooltip-content">
+                <span class="tooltip-text">
+                  <span class="tooltip-inner">
+                    <p class="reward-p"><i class="icon icon-quo-left"></i>如果给你带来一点启发，可以请我喝一杯下午茶吗？<i class="icon icon-quo-right"></i></p>
+                    <div class="reward-box">
+                      
+                        <div class="reward-box-item">
+                          <img class="reward-img" src="/assets/Aplipay.jpg">
+                          <span class="reward-type">支付宝</span>
+                        </div>
+                      
+                      
+                        <div class="reward-box-item">
+                          <img class="reward-img" src="/assets/wechat_pay.jpg">
+                          <span class="reward-type">微信</span>
+                        </div>
+                      
+                    </div>
+                  </span>
+                </span>
+              </span>
+            </div>
+          </a>
+        </div>
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://visionary-5.github.iory-5.top/2024/09/18/vscode%E9%85%8D%E7%BD%AEScheme%E7%8E%AF%E5%A2%83/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/14/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(5)/" class="archive-article-date">
-  	<time datetime="2024-09-14T08:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2024/09/14/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(5)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CS61a编程语言课自学历程————UC Berkeley(5)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/14/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(5)/">CS61a编程语言课自学历程————UC Berkeley(5)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vscode%E9%85%8D%E7%BD%AEScheme%E7%8E%AF%E5%A2%83%EF%BC%88window%E7%B3%BB%E7%BB%9F%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">vscode配置Scheme环境（window系统）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Scheme%E8%A7%A3%E9%87%8A%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">安装Scheme解释器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">环境变量配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vscode%E6%9C%89%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">Vscode有关配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">1.4.</span> <span class="toc-text">测试</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" class="archive-article-date">
-  	<time datetime="2024-09-11T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-11</time>
-</a>
-        </div>
-    	 
+    <section id="comments" class="comments">
+    <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+var notify = 'true' == true ? true : false;
+var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sQVhxZN5xgEVHcX6hMV34XNl-MdYXbMMI",
+            app_key: "evAA89VqTWUQ2HJHgFMXDDiP",
+            placeholder: "请留下你的宝贵意见！",
+            avatar:"retro"
+        });
+    }
+</script>
+</section>
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/">CS61a编程语言课自学历程————UC Berkeley(4)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/06/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(3)/" class="archive-article-date">
-  	<time datetime="2024-09-06T07:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/06/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(3)/">CS61a编程语言课自学历程————UC Berkeley(3)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/05/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(2)/" class="archive-article-date">
-  	<time datetime="2024-09-05T07:57:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/05/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(2)/">CS61a编程语言课自学历程————UC Berkeley(2)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -336,8 +467,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
