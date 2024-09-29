@@ -17,7 +17,7 @@
 <meta property="og:description" content="UC Berkeley CS61a自学历程和学习总结 (3)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-06T07:30:30.000Z">
-<meta property="article:modified_time" content="2024-09-14T08:16:44.422Z">
+<meta property="article:modified_time" content="2024-09-26T06:15:11.562Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -412,7 +412,7 @@
 <hr>
 <h3 id="Dictionary-iteration"><a href="#Dictionary-iteration" class="headerlink" title="Dictionary iteration"></a><strong>Dictionary iteration</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; d = &#123;&#x27;one&#x27;: 1, &#x27;two&#x27;: 2, &#x27;three&#x27;: 3&#125;</span><br><span class="line">&gt;&gt;&gt; d[&#x27;zero&#x27;] = 0</span><br><span class="line">&gt;&gt;&gt; k = iter(d.key()) # or iter(d)</span><br><span class="line">&gt;&gt;&gt; v = iter(d.values())</span><br><span class="line">&gt;&gt;&gt; i = iter(d.items())</span><br></pre></td></tr></table></figure>
 
-<p>然后我们就可以通过next函数，分别来遍历字典的键、值、键值对这些内容。补充一点，如果我们已经构建了迭代器，如果我们在这个字典中新增或删减一个键值对(item),那么我们将无法进行next的遍历，因为整个字典的结构已经被破坏了，我们必须构造一个新的字典迭代器。但是如果我们知识改变了字典当中某一个键的值，我们依然可以使用这个字典迭代器进行next的遍历，因为整个字典的结构没有发生变化。</p>
+<p>然后我们就可以通过next函数，分别来遍历字典的键、值、键值对这些内容。补充一点，如果我们已经构建了迭代器，如果我们在这个字典中新增或删减一个键值对(item),那么我们将无法进行next的遍历，因为整个字典的结构已经被破坏了，我们必须构造一个新的字典迭代器。但是如果我们只是改变了字典当中某一个键的值，我们依然可以使用这个字典迭代器进行next的遍历，因为整个字典的结构没有发生变化。</p>
 <hr>
 <h3 id="For-Statements"><a href="#For-Statements" class="headerlink" title="For Statements"></a><strong>For Statements</strong></h3><blockquote>
 <p>先说结论，如果我在for语句中使用迭代器，我仍然可以遍历所有元素直达到末尾，但这会推进迭代器，使得我不能再次使用它，另外一方面，如果我使用的是可迭代对象，比如范围本身，在for语句中每次使用它时，我可以从头到尾遍历整个内容而不用担心任何的变化</p>
@@ -465,7 +465,7 @@
 <h3 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a><strong>Generators</strong></h3><blockquote>
 <p>A generator is a special kind of iterator,just like a map object is a special kind of iterator.</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def plus_minus(3):</span><br><span class="line">    yield x</span><br><span class="line">    yield -x</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; t = plus_minus(3)</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">-3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def plus_minus(3):</span><br><span class="line">    yield x</span><br><span class="line">    yield -x</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; t = plus_minus(x)</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; next(t)</span><br><span class="line">-3</span><br></pre></td></tr></table></figure>
 
 <p>When a generator function is called, it returns a generator, and that generator iterates over the yields of the function.</p>
 <blockquote>
