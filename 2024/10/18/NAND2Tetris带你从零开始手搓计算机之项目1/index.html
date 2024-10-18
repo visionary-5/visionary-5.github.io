@@ -7,15 +7,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://blog.visionary-5.top">
-  <title>Archives | Arua&#39;s blog</title>
+  <title>NAND2Tetris:带你从零开始手搓计算机之项目1 | Arua&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="share my learning experience">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Arua&#39;s blog">
-<meta property="og:url" content="https://blog.visionary-5.top/archives/index.html">
+  <meta name="description" content="NAND2Tetris:带你从零开始手搓计算机之项目1——搭建逻辑门">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NAND2Tetris:带你从零开始手搓计算机之项目1">
+<meta property="og:url" content="https://blog.visionary-5.top/2024/10/18/NAND2Tetris%E5%B8%A6%E4%BD%A0%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%89%8B%E6%90%93%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B9%8B%E9%A1%B9%E7%9B%AE1/index.html">
 <meta property="og:site_name" content="Arua&#39;s blog">
-<meta property="og:description" content="share my learning experience">
+<meta property="og:description" content="NAND2Tetris:带你从零开始手搓计算机之项目1——搭建逻辑门">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-10-18T08:51:52.000Z">
+<meta property="article:modified_time" content="2024-10-18T08:51:04.122Z">
 <meta property="article:author" content="Arua">
 <meta name="twitter:card" content="summary">
   
@@ -156,305 +158,298 @@
           </div>
           <div id="js-content" class="content-ll">
             
+<article id="post-NAND2Tetris带你从零开始手搓计算机之项目1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        <!--
   
+    <h1 class="article-title" itemprop="name">
+      NAND2Tetris:带你从零开始手搓计算机之项目1
+    </h1>
   
+-->
+        <!--显示阅读次数-->
+        
+          
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+            <span class="icon-sort"></span>
+            <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+              阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+            </span>
+          </a>
+      </header>
     
+
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/10/18/NAND2Tetris%E5%B8%A6%E4%BD%A0%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%89%8B%E6%90%93%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B9%8B%E9%A1%B9%E7%9B%AE1/" class="archive-article-date">
+      <a href="/2024/10/18/NAND2Tetris%E5%B8%A6%E4%BD%A0%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%89%8B%E6%90%93%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B9%8B%E9%A1%B9%E7%9B%AE1/" class="archive-article-date">
   	<time datetime="2024-10-18T08:51:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/10/18/NAND2Tetris%E5%B8%A6%E4%BD%A0%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%89%8B%E6%90%93%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B9%8B%E9%A1%B9%E7%9B%AE1/">NAND2Tetris:带你从零开始手搓计算机之项目1</a>
-    </h1>
-  
+    
 
-        <div class="article-info info-on-right">
-          
-          
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="NAND2Tetris-带你从零开始手搓计算机之项目1——搭建逻辑门"><a href="#NAND2Tetris-带你从零开始手搓计算机之项目1——搭建逻辑门" class="headerlink" title="NAND2Tetris:带你从零开始手搓计算机之项目1——搭建逻辑门"></a>NAND2Tetris:带你从零开始手搓计算机之项目1——搭建逻辑门</h1><span id="more"></span>
+<hr>
+<h2 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h2><p>第一个项目总而言之还是非常地简单，就是要求大家在只拥有与非门的基础上搭建15个比较基础的逻辑门。</p>
+<p>在之前我们学习逻辑门(包括与门、非门、或门),我们还是习惯于把这些内容以原子化的方式看待，缺少了对其逻辑关联的分析和了解。其实本质上，这些门不是相互独立和割裂的，你可以根据与非门搭建一个非门，你可以根据与非门、非门搭建好一个与门…在这个项目里，通过对不同逻辑门的搭建，你会深刻地发现门与门实际上是相互关联、相互成全的！</p>
+<p>同时，不管是在数字电路还是数字逻辑设计这类的课程中，我们都会讨论布尔表达式、真值表这些内容。通过这个项目，你会发现，先写好并化简表达式再来用代码搭建逻辑门，是一件事半功倍的事情。</p>
+<p>总之，15个逻辑门的搭建是我们迈出从零开始搭建计算机的第一步，因为一台再精密的机器，不过也只是由最基本的逻辑门搭建起来的罢。</p>
+<p>以下是我自己实现的逻辑门代码，并非最优解，供参考。关键的思路和要素我会写在注释里。</p>
+<h2 id="Not"><a href="#Not" class="headerlink" title="Not"></a>Not</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Not gate:</span><br><span class="line"> * if (in) out = 0, else out = 1</span><br><span class="line"> */</span><br><span class="line">CHIP Not &#123;</span><br><span class="line">    IN in;</span><br><span class="line">    OUT out;</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    Nand(a = in , b = in , out = out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="And"><a href="#And" class="headerlink" title="And"></a>And</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * And gate:</span><br><span class="line"> * if (a and b) out = 1, else out = 0 </span><br><span class="line"> */</span><br><span class="line">CHIP And &#123;</span><br><span class="line">    IN a, b;</span><br><span class="line">    OUT out;</span><br><span class="line">    </span><br><span class="line">    PARTS:</span><br><span class="line">    Nand(a = a, b = b, out = nandout);</span><br><span class="line">    Not(in = nandout , out = out);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Or"><a href="#Or" class="headerlink" title="Or"></a>Or</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Or gate:</span><br><span class="line"> * if (a or b) out = 1, else out = 0 </span><br><span class="line"> */</span><br><span class="line">CHIP Or &#123;</span><br><span class="line">    IN a, b;</span><br><span class="line">    OUT out;</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    Not(in = a, out = nanda);</span><br><span class="line">    Not(in = b,out = nandb);</span><br><span class="line">    Nand(a = nanda, b = nandb, out = out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Xor"><a href="#Xor" class="headerlink" title="Xor"></a>Xor</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Exclusive-or gate:</span><br><span class="line"> * if ((a and Not(b)) or (Not(a) and b)) out = 1, else out = 0</span><br><span class="line"> */</span><br><span class="line">CHIP Xor &#123;</span><br><span class="line">    IN a, b;</span><br><span class="line">    OUT out;</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    Not(in = a, out = nanda);</span><br><span class="line">    Not(in = b, out = nandb);</span><br><span class="line">    And(a = a,b = nandb, out = anandb);</span><br><span class="line">    And(a = nanda, b = b, out = bnanda);</span><br><span class="line">    Or(a = anandb , b=bnanda , out=out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mux"><a href="#Mux" class="headerlink" title="Mux"></a>Mux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/** </span><br><span class="line"> * Multiplexor:</span><br><span class="line"> * if (sel = 0) out = a, else out = b</span><br><span class="line"> */</span><br><span class="line">CHIP Mux &#123;</span><br><span class="line">    IN a, b, sel;</span><br><span class="line">    OUT out;</span><br><span class="line">//我们通过什么方式去实现选择，这是一件非常值得考虑的事情。最重要的一件事情就是谁和1进行与运算就是他本身！</span><br><span class="line">// out = (a AND (NOT sel)) OR (b AND sel)</span><br><span class="line">    PARTS:</span><br><span class="line">    Not(in = sel, out = notsel);</span><br><span class="line">    And(a = a, b = notsel, out = aandnotsel);</span><br><span class="line">    And(a = b, b = sel, out = bandsel);</span><br><span class="line">    Or(a = aandnotsel, b = bandsel, out = out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="DMux"><a href="#DMux" class="headerlink" title="DMux"></a>DMux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Demultiplexor:</span><br><span class="line"> * [a, b] = [in, 0] if sel = 0</span><br><span class="line"> *          [0, in] if sel = 1</span><br><span class="line"> */</span><br><span class="line">CHIP DMux &#123;</span><br><span class="line">    IN in, sel;</span><br><span class="line">    OUT a, b;</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    Not(in = sel, out = notsel);</span><br><span class="line">    And(a = in, b = notsel, out = a);</span><br><span class="line">    And(a = in, b = sel, out = b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Not16"><a href="#Not16" class="headerlink" title="Not16"></a>Not16</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 16-bit Not gate:</span><br><span class="line"> * for i = 0, ..., 15:</span><br><span class="line"> * out[i] = Not(a[i])</span><br><span class="line"> */</span><br><span class="line">CHIP Not16 &#123;</span><br><span class="line">    IN in[16];</span><br><span class="line">    OUT out[16];</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    // 为每个位使用单独的 Not 门</span><br><span class="line">    Not(in=in[0], out=out[0]);</span><br><span class="line">    Not(in=in[1], out=out[1]);</span><br><span class="line">    Not(in=in[2], out=out[2]);</span><br><span class="line">    Not(in=in[3], out=out[3]);</span><br><span class="line">    Not(in=in[4], out=out[4]);</span><br><span class="line">    Not(in=in[5], out=out[5]);</span><br><span class="line">    Not(in=in[6], out=out[6]);</span><br><span class="line">    Not(in=in[7], out=out[7]);</span><br><span class="line">    Not(in=in[8], out=out[8]);</span><br><span class="line">    Not(in=in[9], out=out[9]);</span><br><span class="line">    Not(in=in[10], out=out[10]);</span><br><span class="line">    Not(in=in[11], out=out[11]);</span><br><span class="line">    Not(in=in[12], out=out[12]);</span><br><span class="line">    Not(in=in[13], out=out[13]);</span><br><span class="line">    Not(in=in[14], out=out[14]);</span><br><span class="line">    Not(in=in[15], out=out[15]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="And16"><a href="#And16" class="headerlink" title="And16"></a>And16</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 16-bit And gate:</span><br><span class="line"> * for i = 0, ..., 15:</span><br><span class="line"> * out[i] = a[i] And b[i] </span><br><span class="line"> */</span><br><span class="line">CHIP And16 &#123;</span><br><span class="line">    IN a[16], b[16];</span><br><span class="line">    OUT out[16];</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    And(a = a[0], b = b[0], out = out[0]);</span><br><span class="line">    And(a = a[1], b = b[1], out = out[1]);</span><br><span class="line">    And(a = a[2], b = b[2], out = out[2]);</span><br><span class="line">    And(a = a[3], b = b[3], out = out[3]);</span><br><span class="line">    And(a = a[4], b = b[4], out = out[4]);</span><br><span class="line">    And(a = a[5], b = b[5], out = out[5]);</span><br><span class="line">    And(a = a[6], b = b[6], out = out[6]);</span><br><span class="line">    And(a = a[7], b = b[7], out = out[7]);</span><br><span class="line">    And(a = a[8], b = b[8], out = out[8]);</span><br><span class="line">    And(a = a[9], b = b[9], out = out[9]);</span><br><span class="line">    And(a = a[10], b = b[10], out = out[10]);</span><br><span class="line">    And(a = a[11], b = b[11], out = out[11]);</span><br><span class="line">    And(a = a[12], b = b[12], out = out[12]);</span><br><span class="line">    And(a = a[13], b = b[13], out = out[13]);</span><br><span class="line">    And(a = a[14], b = b[14], out = out[14]);</span><br><span class="line">    And(a = a[15], b = b[15], out = out[15]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Or16"><a href="#Or16" class="headerlink" title="Or16"></a>Or16</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 16-bit Or gate:</span><br><span class="line"> * for i = 0, ..., 15:</span><br><span class="line"> * out[i] = a[i] Or b[i] </span><br><span class="line"> */</span><br><span class="line">CHIP Or16 &#123;</span><br><span class="line">    IN a[16], b[16];</span><br><span class="line">    OUT out[16];</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    Or(a=a[0], b=b[0], out=out[0]);</span><br><span class="line">    Or(a=a[1], b=b[1], out=out[1]);</span><br><span class="line">    Or(a=a[2], b=b[2], out=out[2]);</span><br><span class="line">    Or(a=a[3], b=b[3], out=out[3]);</span><br><span class="line">    Or(a=a[4], b=b[4], out=out[4]);</span><br><span class="line">    Or(a=a[5], b=b[5], out=out[5]);</span><br><span class="line">    Or(a=a[6], b=b[6], out=out[6]);</span><br><span class="line">    Or(a=a[7], b=b[7], out=out[7]);</span><br><span class="line">    Or(a=a[8], b=b[8], out=out[8]);</span><br><span class="line">    Or(a=a[9], b=b[9], out=out[9]);</span><br><span class="line">    Or(a=a[10], b=b[10], out=out[10]);</span><br><span class="line">    Or(a=a[11], b=b[11], out=out[11]);</span><br><span class="line">    Or(a=a[12], b=b[12], out=out[12]);</span><br><span class="line">    Or(a=a[13], b=b[13], out=out[13]);</span><br><span class="line">    Or(a=a[14], b=b[14], out=out[14]);</span><br><span class="line">    Or(a=a[15], b=b[15], out=out[15]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mux16"><a href="#Mux16" class="headerlink" title="Mux16"></a>Mux16</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 16-bit multiplexor: </span><br><span class="line"> * for i = 0, ..., 15:</span><br><span class="line"> * if (sel = 0) out[i] = a[i], else out[i] = b[i]</span><br><span class="line"> */</span><br><span class="line">CHIP Mux16 &#123;</span><br><span class="line">    IN a[16], b[16], sel;  // 16 位输入 a 和 b，1 位选择信号 sel</span><br><span class="line">    OUT out[16];           // 16 位输出 out</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    // 为每个位使用单独的 Mux 门</span><br><span class="line">    Mux(a=a[0], b=b[0], sel=sel, out=out[0]);</span><br><span class="line">    Mux(a=a[1], b=b[1], sel=sel, out=out[1]);</span><br><span class="line">    Mux(a=a[2], b=b[2], sel=sel, out=out[2]);</span><br><span class="line">    Mux(a=a[3], b=b[3], sel=sel, out=out[3]);</span><br><span class="line">    Mux(a=a[4], b=b[4], sel=sel, out=out[4]);</span><br><span class="line">    Mux(a=a[5], b=b[5], sel=sel, out=out[5]);</span><br><span class="line">    Mux(a=a[6], b=b[6], sel=sel, out=out[6]);</span><br><span class="line">    Mux(a=a[7], b=b[7], sel=sel, out=out[7]);</span><br><span class="line">    Mux(a=a[8], b=b[8], sel=sel, out=out[8]);</span><br><span class="line">    Mux(a=a[9], b=b[9], sel=sel, out=out[9]);</span><br><span class="line">    Mux(a=a[10], b=b[10], sel=sel, out=out[10]);</span><br><span class="line">    Mux(a=a[11], b=b[11], sel=sel, out=out[11]);</span><br><span class="line">    Mux(a=a[12], b=b[12], sel=sel, out=out[12]);</span><br><span class="line">    Mux(a=a[13], b=b[13], sel=sel, out=out[13]);</span><br><span class="line">    Mux(a=a[14], b=b[14], sel=sel, out=out[14]);</span><br><span class="line">    Mux(a=a[15], b=b[15], sel=sel, out=out[15]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Or8way"><a href="#Or8way" class="headerlink" title="Or8way"></a>Or8way</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 8-way Or gate: </span><br><span class="line"> * out = in[0] Or in[1] Or ... Or in[7]</span><br><span class="line"> */</span><br><span class="line">CHIP Or8Way &#123;</span><br><span class="line">    IN in[8];</span><br><span class="line">    OUT out;</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    Or(a = in[0], b = in[1], out = out0);</span><br><span class="line">    Or(a = out0, b = in[2], out = out1);</span><br><span class="line">    Or(a = out1, b = in[3], out = out2);</span><br><span class="line">    Or(a = out2, b = in[4], out = out3);</span><br><span class="line">    Or(a = out3, b = in[5], out = out4);</span><br><span class="line">    Or(a = out4, b = in[6], out = out5);</span><br><span class="line">    Or(a = out5, b = in[7], out = out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mux4Way16"><a href="#Mux4Way16" class="headerlink" title="Mux4Way16"></a>Mux4Way16</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 4-way 16-bit multiplexor:</span><br><span class="line"> * out = a if sel = 00</span><br><span class="line"> *       b if sel = 01</span><br><span class="line"> *       c if sel = 10</span><br><span class="line"> *       d if sel = 11</span><br><span class="line"> */</span><br><span class="line">// 这个代码的实现比较巧妙，其实四路十六位多路选择器就是用两个二路的多路选择器来实现的。</span><br><span class="line">CHIP Mux4Way16 &#123;</span><br><span class="line">    IN a[16], b[16], c[16], d[16], sel[2];</span><br><span class="line">    OUT out[16];</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    // Select between a and b based on sel[0]</span><br><span class="line">    Mux16(a=a, b=b, sel=sel[0], out=outAB);</span><br><span class="line">    // Select between c and d based on sel[0]</span><br><span class="line">    Mux16(a=c, b=d, sel=sel[0], out=outCD);</span><br><span class="line">    // Final selection between outAB and outCD based on sel[1]</span><br><span class="line">    Mux16(a=outAB, b=outCD, sel=sel[1], out=out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mux8Way16"><a href="#Mux8Way16" class="headerlink" title="Mux8Way16"></a>Mux8Way16</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 8-way 16-bit multiplexor:</span><br><span class="line"> * out = a if sel = 000</span><br><span class="line"> *       b if sel = 001</span><br><span class="line"> *       c if sel = 010</span><br><span class="line"> *       d if sel = 011</span><br><span class="line"> *       e if sel = 100</span><br><span class="line"> *       f if sel = 101</span><br><span class="line"> *       g if sel = 110</span><br><span class="line"> *       h if sel = 111</span><br><span class="line"> */</span><br><span class="line">CHIP Mux8Way16 &#123;</span><br><span class="line">    IN a[16], b[16], c[16], d[16],</span><br><span class="line">       e[16], f[16], g[16], h[16],</span><br><span class="line">       sel[3];</span><br><span class="line">    OUT out[16];</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    Mux4Way16(a=a, b=b, c=c, d=d, sel=sel[0..1], out=outab);</span><br><span class="line">    Mux4Way16(a=e , b=f , c=g , d=h , sel=sel[0..1] , out=outcd);</span><br><span class="line">    Mux16(a=outab, b=outcd, sel=sel[2], out = out);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="DMux4Way"><a href="#DMux4Way" class="headerlink" title="DMux4Way"></a>DMux4Way</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 4-way demultiplexor:</span><br><span class="line"> * [a, b, c, d] = [in, 0, 0, 0] if sel = 00</span><br><span class="line"> *                [0, in, 0, 0] if sel = 01</span><br><span class="line"> *                [0, 0, in, 0] if sel = 10</span><br><span class="line"> *                [0, 0, 0, in] if sel = 11</span><br><span class="line"> */</span><br><span class="line"> // 高位选择，自顶向下</span><br><span class="line">CHIP DMux4Way &#123;</span><br><span class="line">    IN in, sel[2];</span><br><span class="line">    OUT a, b, c, d;</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    // 第一步：使用第一个 DMux 根据 sel[1] 拆分为 in1 和 in2</span><br><span class="line">    DMux(in=in, sel=sel[1], a=in1, b=in2);</span><br><span class="line"></span><br><span class="line">    // 第二步：根据 sel[0] 对 in1 进行进一步拆分为 a 和 b</span><br><span class="line">    DMux(in=in1, sel=sel[0], a=a, b=b);</span><br><span class="line"></span><br><span class="line">    // 第二步：根据 sel[0] 对 in2 进行进一步拆分为 c 和 d</span><br><span class="line">    DMux(in=in2, sel=sel[0], a=c, b=d);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="DMux8Way"><a href="#DMux8Way" class="headerlink" title="DMux8Way"></a>DMux8Way</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 8-way demultiplexor:</span><br><span class="line"> * [a, b, c, d, e, f, g, h] = [in, 0,  0,  0,  0,  0,  0,  0] if sel = 000</span><br><span class="line"> *                            [0, in,  0,  0,  0,  0,  0,  0] if sel = 001</span><br><span class="line"> *                            [0,  0, in,  0,  0,  0,  0,  0] if sel = 010</span><br><span class="line"> *                            [0,  0,  0, in,  0,  0,  0,  0] if sel = 011</span><br><span class="line"> *                            [0,  0,  0,  0, in,  0,  0,  0] if sel = 100</span><br><span class="line"> *                            [0,  0,  0,  0,  0, in,  0,  0] if sel = 101</span><br><span class="line"> *                            [0,  0,  0,  0,  0,  0, in,  0] if sel = 110</span><br><span class="line"> *                            [0,  0,  0,  0,  0,  0,  0, in] if sel = 111</span><br><span class="line"> */</span><br><span class="line">CHIP DMux8Way &#123;</span><br><span class="line">    IN in, sel[3];</span><br><span class="line">    OUT a, b, c, d, e, f, g, h;</span><br><span class="line"></span><br><span class="line">    PARTS:</span><br><span class="line">    // 第一步：使用 DMux 根据 sel[2] 将信号拆分为两部分</span><br><span class="line">    DMux(in=in, sel=sel[2], a=in1, b=in2);</span><br><span class="line"></span><br><span class="line">    // 第二步：对 in1 使用 DMux4Way 进一步根据 sel[1:0] 拆分为 a, b, c, d</span><br><span class="line">    DMux4Way(in=in1, sel=sel[0..1], a=a, b=b, c=c, d=d);</span><br><span class="line"></span><br><span class="line">    // 第二步：对 in2 使用 DMux4Way 进一步根据 sel[1:0] 拆分为 e, f, g, h</span><br><span class="line">    DMux4Way(in=in2, sel=sel[0..1], a=e, b=f, c=g, d=h);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+      <!-- 增加版权声明 -->
+
+      <!- 文件结束 -->
+
+      
+        <div class="essayending">
+          <div>
+           <div style="text-align:center;color: #ccc;font-size:22px;">
+           <br/>
+           <br/>
+           -------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------
+           <br/>
+           <br/>
+            <br/>
+            <br/>
+           </div>
+          </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+
+      <!- 文件结束 配置完成-->
+      
+      
+      
+      <div class="declare">
+        <strong>本文作者：</strong>
+        
+          Arua
+        
+        <br>
+        <strong>本文链接：</strong>
+        <a rel="license" href="https://blog.visionary-5.top/2024/10/18/NAND2Tetris%E5%B8%A6%E4%BD%A0%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%89%8B%E6%90%93%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B9%8B%E9%A1%B9%E7%9B%AE1/">https://blog.visionary-5.top/2024/10/18/NAND2Tetris%E5%B8%A6%E4%BD%A0%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%89%8B%E6%90%93%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B9%8B%E9%A1%B9%E7%9B%AE1/</a>
+        <br>
+        <strong>版权声明：</strong>
+        本作品采用
+        <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+        进行许可。转载请注明出处！
+        
+          <br>
+          <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+        
+      </div>
+      
+
+      <!-- 增加版权声明结束 -->
+
+            
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+              <span class="tooltip-item">赏</span>
+              <span class="tooltip-content">
+                <span class="tooltip-text">
+                  <span class="tooltip-inner">
+                    <p class="reward-p"><i class="icon icon-quo-left"></i>如果给你带来一点启发，可以请我喝一杯下午茶吗？<i class="icon icon-quo-right"></i></p>
+                    <div class="reward-box">
+                      
+                        <div class="reward-box-item">
+                          <img class="reward-img" src="/assets/Aplipay.jpg">
+                          <span class="reward-type">支付宝</span>
+                        </div>
+                      
+                      
+                        <div class="reward-box-item">
+                          <img class="reward-img" src="/assets/wechat_pay.jpg">
+                          <span class="reward-type">微信</span>
+                        </div>
+                      
+                    </div>
+                  </span>
+                </span>
+              </span>
+            </div>
+          </a>
+        </div>
+      
+    </div>
+
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://visionary-5.github.iory-5.top/2024/10/18/NAND2Tetris%E5%B8%A6%E4%BD%A0%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%89%8B%E6%90%93%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B9%8B%E9%A1%B9%E7%9B%AE1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/10/17/%E6%95%B0%E9%80%BB%E5%AE%9E%E9%AA%8C1%E2%80%94%E2%80%94%E6%89%8B%E6%90%93%E4%B8%80%E4%B8%AA%E5%8F%AF%E6%8E%A7%E6%B5%81%E6%B0%B4%E7%81%AF/" class="archive-article-date">
-  	<time datetime="2024-10-17T12:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-17</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2024/10/17/%E6%95%B0%E9%80%BB%E5%AE%9E%E9%AA%8C1%E2%80%94%E2%80%94%E6%89%8B%E6%90%93%E4%B8%80%E4%B8%AA%E5%8F%AF%E6%8E%A7%E6%B5%81%E6%B0%B4%E7%81%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数逻实验1——手搓一个可控流水灯</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/10/17/%E6%95%B0%E9%80%BB%E5%AE%9E%E9%AA%8C1%E2%80%94%E2%80%94%E6%89%8B%E6%90%93%E4%B8%80%E4%B8%AA%E5%8F%AF%E6%8E%A7%E6%B5%81%E6%B0%B4%E7%81%AF/">数逻实验1——手搓一个可控流水灯</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NAND2Tetris-%E5%B8%A6%E4%BD%A0%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%89%8B%E6%90%93%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B9%8B%E9%A1%B9%E7%9B%AE1%E2%80%94%E2%80%94%E6%90%AD%E5%BB%BA%E9%80%BB%E8%BE%91%E9%97%A8"><span class="toc-number">1.</span> <span class="toc-text">NAND2Tetris:带你从零开始手搓计算机之项目1——搭建逻辑门</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">总述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Not"><span class="toc-number">1.2.</span> <span class="toc-text">Not</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#And"><span class="toc-number">1.3.</span> <span class="toc-text">And</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Or"><span class="toc-number">1.4.</span> <span class="toc-text">Or</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Xor"><span class="toc-number">1.5.</span> <span class="toc-text">Xor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mux"><span class="toc-number">1.6.</span> <span class="toc-text">Mux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DMux"><span class="toc-number">1.7.</span> <span class="toc-text">DMux</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Not16"><span class="toc-number">1.8.</span> <span class="toc-text">Not16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#And16"><span class="toc-number">1.9.</span> <span class="toc-text">And16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Or16"><span class="toc-number">1.10.</span> <span class="toc-text">Or16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mux16"><span class="toc-number">1.11.</span> <span class="toc-text">Mux16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Or8way"><span class="toc-number">1.12.</span> <span class="toc-text">Or8way</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mux4Way16"><span class="toc-number">1.13.</span> <span class="toc-text">Mux4Way16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mux8Way16"><span class="toc-number">1.14.</span> <span class="toc-text">Mux8Way16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DMux4Way"><span class="toc-number">1.15.</span> <span class="toc-text">DMux4Way</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DMux8Way"><span class="toc-number">1.16.</span> <span class="toc-text">DMux8Way</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/10/13/%E8%81%8A%E4%B8%80%E8%81%8A%E4%B8%AD%E5%9B%BD%E7%9A%84%E5%AD%A6%E7%94%9F%E7%BE%A4%E4%BD%93/" class="archive-article-date">
-  	<time datetime="2024-10-13T05:12:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-13</time>
-</a>
-        </div>
-    	 
+    <section id="comments" class="comments">
+    <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+var notify = 'true' == true ? true : false;
+var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "sQVhxZN5xgEVHcX6hMV34XNl-MdYXbMMI",
+            app_key: "evAA89VqTWUQ2HJHgFMXDDiP",
+            placeholder: "请留下你的宝贵意见！",
+            avatar:"retro"
+        });
+    }
+</script>
+</section>
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/10/13/%E8%81%8A%E4%B8%80%E8%81%8A%E4%B8%AD%E5%9B%BD%E7%9A%84%E5%AD%A6%E7%94%9F%E7%BE%A4%E4%BD%93/">聊一聊中国的学生群体</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/10/08/Verilog%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2024-10-08T04:34:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-10-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/10/08/Verilog%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">Verilog快速入门</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/18/vscode%E9%85%8D%E7%BD%AEScheme%E7%8E%AF%E5%A2%83/" class="archive-article-date">
-  	<time datetime="2024-09-18T05:49:21.752Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/18/vscode%E9%85%8D%E7%BD%AEScheme%E7%8E%AF%E5%A2%83/">vscode配置Scheme环境（window系统）</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/14/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(5)/" class="archive-article-date">
-  	<time datetime="2024-09-14T08:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/14/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(5)/">CS61a编程语言课自学历程————UC Berkeley(5)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/" class="archive-article-date">
-  	<time datetime="2024-09-11T11:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/11/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(4)/">CS61a编程语言课自学历程————UC Berkeley(4)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/06/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(3)/" class="archive-article-date">
-  	<time datetime="2024-09-06T07:30:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/06/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(3)/">CS61a编程语言课自学历程————UC Berkeley(3)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/09/05/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(2)/" class="archive-article-date">
-  	<time datetime="2024-09-05T07:57:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-09-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/09/05/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(2)/">CS61a编程语言课自学历程————UC Berkeley(2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/08/31/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(1)/" class="archive-article-date">
-  	<time datetime="2024-08-31T12:31:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-08-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/08/31/CS61A%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AF%BE%E8%87%AA%E5%AD%A6%E5%8E%86%E7%A8%8B(1)/">CS61a编程语言课自学历程————UC Berkeley(1)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -486,8 +481,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
